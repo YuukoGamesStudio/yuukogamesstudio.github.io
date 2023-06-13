@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css?family=Muli:400,700");
+
+html,
+body {
+  margin: 0;
+  background-color: black;
+  color: white;
+  font-family: "Muli";
+}
+
+.page-container {
+  padding: 10vh calc((100% - 500px) / 4);
+  height: 100vh;
+}
