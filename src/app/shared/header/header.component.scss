@@ -1,10 +1,12 @@
+@import 'assets/scss/variables';
+
 .header {
-  padding: 2rem calc((100% - 500px) / 4);
+  padding: 1.5rem calc((100% - 500px) / 4);
   display: flex;
   align-items: center;
 
   .logo {
-    height: 3em;
+    height: 3rem;
   }
 
   .separator {
@@ -17,7 +19,7 @@
     transition: color 0.1s ease-in-out;
 
     &:hover {
-      color: #BC2E18;
+      color: $brand-color;
     }
   }
 
