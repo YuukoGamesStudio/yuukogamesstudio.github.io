@@ -1,11 +1,10 @@
 .header {
-  padding: 1rem calc((100% - 500px) / 4);
+  padding: 2rem calc((100% - 500px) / 4);
   display: flex;
   align-items: center;
 
   .logo {
-    height: 5em;
-    aspect-ratio: initial;
+    height: 3em;
   }
 
   .separator {
@@ -18,7 +17,7 @@
     transition: color 0.1s ease-in-out;
 
     &:hover {
-      color: rgb(208, 64, 16);
+      color: #BC2E18;
     }
   }
 
