@@ -1,29 +1,23 @@
-@import 'assets/scss/variables';
+@import "assets/scss/variables";
 
-.header {
-  padding: 1.5rem calc((100% - 500px) / 4);
-  display: flex;
-  align-items: center;
+.logo {
+  height: 3rem;
+}
 
-  .logo {
-    height: 3rem;
+.separator {
+  flex: 1;
+}
+
+.link {
+  color: white;
+  cursor: pointer;
+  transition: color 0.1s ease-in-out;
+
+  &:hover {
+    color: $brand-color;
   }
+}
 
-  .separator {
-    flex: 1;
-  }
-
-  .link {
-    color: white;
-    cursor: pointer;
-    transition: color 0.1s ease-in-out;
-
-    &:hover {
-      color: $brand-color;
-    }
-  }
-
-  .action-button {
-    padding-left: 1rem;
-  }
+.action-button {
+  padding-left: 1rem;
 }
