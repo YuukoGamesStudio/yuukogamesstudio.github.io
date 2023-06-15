@@ -11,22 +11,27 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
+    title: 'Yuuko Games - Homemade Videogames'
   },
   {
     path: 'about-us',
     component: AboutUsComponent,
+    title: 'About us - Yuuko Games'
   },
   {
     path: 'games',
     component: GamesComponent,
+    title: 'Games - Yuuko Games'
   },
   {
     path: 'presskit',
     component: PresskitComponent,
+    title: 'Presskit - Yuuko Games'
   },
   {
     path: '**',
     component: NotFoundComponent,
+    title: 'Page not found - Yuuko Games'
   },
 ];
 
