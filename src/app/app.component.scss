@@ -1,3 +1,5 @@
+@import "assets/scss/variables";
+
 .header {
   z-index: 1000;
   position: fixed;
@@ -12,6 +14,10 @@
   }
 }
 
+.main {
+  background-color: $background-color;
+}
+
 .footer {
   display: flex;
   flex-direction: column;
@@ -19,7 +25,7 @@
   text-align: center;
   padding-top: 60px;
   padding-bottom: 60px;
-  background-color: #0f1112;
+  background-color: #171a1c;
 
   .container {
     max-width: 500px;
