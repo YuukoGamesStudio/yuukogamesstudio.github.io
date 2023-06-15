@@ -10,6 +10,7 @@ import { PresskitComponent } from '@pages/presskit/presskit.component';
 import { HeaderComponent } from '@shared/header/header.component';
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
 import { FooterComponent } from '@shared/footer/footer.component';
+import { GameComponent } from './pages/games/game/game.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FooterComponent } from '@shared/footer/footer.component';
     PresskitComponent,
     HeaderComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,

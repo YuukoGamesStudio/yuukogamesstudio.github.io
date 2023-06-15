@@ -1,0 +1,41 @@
+<div class="page-container">
+  <div class="head">
+    <div>
+      <h1>{{ game.name }}</h1>
+      <p class="description">{{ game.description }}</p>
+    </div>
+    <div class="column">
+      <img
+        [src]="game.images.logoTransparent"
+        class="logo"
+        alt="Transparent game logo"
+      />
+      <a [href]="game.externalLink" target="_blank" class="button">
+        VISIT WEBSITE
+      </a>
+      <a href="/presskit" class="button secondary">
+        PRESSKIT
+      </a>
+    </div>
+  </div>
+
+  <h2 class="subtitle">Screenshots</h2>
+  <div class="gallery">
+    <img
+      *ngFor="let screenshot of game.images.screenshots"
+      [src]="screenshot"
+      class="screenshot"
+      alt="Game screenshot"
+    />
+  </div>
+
+  <h2 class="subtitle">Teaser Trailer</h2>
+  <iframe
+    width="100%"
+    class="video"
+    [src]="embedSafeUrl"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+</div>

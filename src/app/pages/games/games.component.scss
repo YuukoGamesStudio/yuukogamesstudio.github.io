@@ -1,0 +1,46 @@
+.game {
+  position: relative;
+  display: inline-block;
+
+  .game-name {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .game-logo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 21 / 9;
+  }
+
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  .game-text {
+    font-size: 20px;
+    text-align: center;
+  }
+}
+
+.more {
+  margin: 3rem 0;
+  width: 100%;
+  text-align: center;
+}

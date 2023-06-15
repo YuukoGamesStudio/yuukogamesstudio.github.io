@@ -1,3 +1,34 @@
 <div class="page-container">
-  <p>games works!</p>
+  <h1>GAMES</h1>
+  <div
+    *ngFor="let game of games"
+    (mouseenter)="toggleHover(game.id)"
+    (mouseleave)="toggleHover(null)"
+  >
+    <a [href]="'games/' + game.id" class="game">
+      <img
+        [ngStyle]="{ display: currentHover !== game.id ? 'block' : 'none' }"
+        [src]="game.images.logo"
+        class="game-logo"
+        alt="Game logo image"
+      />
+      <video
+        [ngStyle]="{ display: currentHover === game.id ? 'block' : 'none' }"
+        [src]="game.video.shortVideo"
+        class="game-logo"
+        alt="Game logo video"
+        autoplay
+        loop
+        muted
+      ></video>
+      <div
+        class="overlay"
+        *ngIf="{ display: currentHover === game.id ? 'block' : 'none' }"
+      >
+        <span class="game-text">{{ game.name }}</span>
+      </div>
+    </a>
+  </div>
+
+  <p class="more">And more to come...</p>
 </div>

@@ -1,42 +1,50 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutUsComponent } from '@pages/about-us/about-us.component';
+import { GameComponent } from '@pages/games/game/game.component';
+import { GameGuard } from '@pages/games/game/game.guard';
 import { GamesComponent } from '@pages/games/games.component';
 import { HomeComponent } from '@pages/home/home.component';
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
 import { PresskitComponent } from '@pages/presskit/presskit.component';
 
-
 const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
-    title: 'Yuuko Games - Homemade Videogames'
+    title: 'Yuuko Games - Homemade Videogames',
   },
   {
     path: 'about-us',
     component: AboutUsComponent,
-    title: 'About us - Yuuko Games'
+    title: 'About us - Yuuko Games',
   },
   {
     path: 'games',
     component: GamesComponent,
-    title: 'Games - Yuuko Games'
+    title: 'Games - Yuuko Games',
+  },
+  {
+    path: 'games/:id',
+    component: GameComponent,
+    title: 'Game - Yuuko Games',
+    canActivate: [GameGuard],
   },
   {
     path: 'presskit',
     component: PresskitComponent,
-    title: 'Presskit - Yuuko Games'
+    title: 'Presskit - Yuuko Games',
   },
   {
     path: '**',
     component: NotFoundComponent,
-    title: 'Page not found - Yuuko Games'
+    title: 'Page not found - Yuuko Games',
   },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [GameGuard],
 })
 export class AppRoutingModule {}
