@@ -13,7 +13,9 @@
             VISIT WEBSITE
             <span class="material-icons icon-padding"> open_in_new </span>
           </a>
-          <a href="/presskit" class="button secondary"> PRESSKIT </a>
+          <a [href]="'games/' + game.id + '/presskit'" class="button secondary">
+            PRESSKIT
+          </a>
         </div>
       </div>
       <div class="description margin" [innerHTML]="game.description"></div>
