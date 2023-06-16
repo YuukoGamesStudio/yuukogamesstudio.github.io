@@ -1,20 +1,17 @@
 <div class="page-container">
   <div class="head">
     <div>
-      <!-- <h1>{{ game.name }}</h1> -->
-      <div style="display: flex; align-items: stretch;" class="margin">
+      <div class="header margin">
         <img
           [src]="game.images.logoTransparent"
           class="logo"
           alt="Transparent game logo"
         />
-        <div style="flex: 1"></div>
-        <div style="display: flex; flex-direction: column; gap: 12px">
+        <div class="separator"></div>
+        <div class="links">
           <a [href]="game.externalLink" target="_blank" class="button">
             VISIT WEBSITE
-            <span class="material-icons" style="padding: 0 8px">
-              open_in_new
-            </span>
+            <span class="material-icons icon-padding"> open_in_new </span>
           </a>
           <a href="/presskit" class="button secondary"> PRESSKIT </a>
         </div>

@@ -3,6 +3,11 @@
 .head {
   display: flex;
 
+  .header {
+    display: flex;
+    align-items: stretch;
+  }
+
   .logo {
     width: 50vw;
     max-width: 500px;
@@ -24,8 +29,22 @@
   }
 }
 
+.separator {
+  flex: 1;
+}
+
 .margin {
   margin-bottom: 2rem;
+}
+
+.icon-padding {
+  padding: 0 8px;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 .button {
@@ -74,7 +93,7 @@
     width: 100%;
     height: auto;
     border-radius: 12px;
-    // cursor: pointer;
+    // cursor: pointer; // Change this when doing the gallery
   }
 }
 
