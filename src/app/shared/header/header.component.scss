@@ -16,8 +16,16 @@
   &:hover {
     color: $brand-color;
   }
+
+  .name {
+    text-align: center;
+  }
 }
 
 .action-button {
-  padding-left: 1rem;
+  padding-left: 20px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }

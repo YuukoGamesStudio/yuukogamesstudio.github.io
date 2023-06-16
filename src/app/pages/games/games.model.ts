@@ -58,7 +58,7 @@ export const GAMES: Game[] = [
     id: 'echoes-of-madness',
     name: 'Echoes of Madness',
     description:
-      'Echoes of Madness is a spine-chilling horror game that will embark you into a terrifying and majestic experience. Set in a desolate and foreboding environment, the game combines elements of psychological horror and puzzle to create a truly immersive gameplay.\n\n' +
+      '<b>Echoes of Madness</b> is a spine-chilling horror game that will embark you into a terrifying and majestic experience. Set in a desolate and foreboding environment, the game combines elements of psychological horror and puzzle to create a truly immersive gameplay.\n\n' +
       "Prepare yourself for an unforgettable journey into the depths of madness, where your wits and sanity will be tested at every turn. Echoes of Madness is a game that will leave you questioning your own perception of reality and lingering in your thoughts long after you've finished playing.",
     extraInfo: {
       title: 'Echoes of Madness',

@@ -1,8 +1,25 @@
 <div class="page-container">
   <div class="head">
     <div>
-      <h1>{{ game.name }}</h1>
-      <h4 class="description">{{ game.description }}</h4>
+      <!-- <h1>{{ game.name }}</h1> -->
+      <div style="display: flex; align-items: stretch;" class="margin">
+        <img
+          [src]="game.images.logoTransparent"
+          class="logo"
+          alt="Transparent game logo"
+        />
+        <div style="flex: 1"></div>
+        <div style="display: flex; flex-direction: column; gap: 12px">
+          <a [href]="game.externalLink" target="_blank" class="button">
+            VISIT WEBSITE
+            <span class="material-icons" style="padding: 0 8px">
+              open_in_new
+            </span>
+          </a>
+          <a href="/presskit" class="button secondary"> PRESSKIT </a>
+        </div>
+      </div>
+      <div class="description margin" [innerHTML]="game.description"></div>
       <p class="description"><b>Genre:</b> {{ game.extraInfo.genre }}</p>
       <p class="description">
         <b>Platforms:</b> {{ game.extraInfo.platforms.join(", ") }}
@@ -11,17 +28,6 @@
         <b>Controls:</b> {{ game.extraInfo.controls.join(", ") }}
       </p>
       <p class="description"><b>PEGI:</b> {{ game.extraInfo.pegi }}</p>
-    </div>
-    <div class="column">
-      <img
-        [src]="game.images.logoTransparent"
-        class="logo"
-        alt="Transparent game logo"
-      />
-      <a [href]="game.externalLink" target="_blank" class="button">
-        VISIT WEBSITE
-      </a>
-      <a href="/presskit" class="button secondary"> PRESSKIT </a>
     </div>
   </div>
 

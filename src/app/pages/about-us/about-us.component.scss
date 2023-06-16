@@ -1,0 +1,29 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  @media (max-width: 1000px){
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .member {
+    background-color: black;
+    padding: 1rem;
+    overflow: hidden;
+    border-radius: 1rem;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .name {
+      margin: 0;
+      font-size: 1.4rem;
+      font-weight: bold;
+    }
+
+    .job {
+      margin: 0;
+    }
+  }
+}
