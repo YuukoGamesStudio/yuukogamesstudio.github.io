@@ -2,7 +2,15 @@
   <div class="head">
     <div>
       <h1>{{ game.name }}</h1>
-      <p class="description">{{ game.description }}</p>
+      <h4 class="description">{{ game.description }}</h4>
+      <p class="description"><b>Genre:</b> {{ game.extraInfo.genre }}</p>
+      <p class="description">
+        <b>Platforms:</b> {{ game.extraInfo.platforms.join(", ") }}
+      </p>
+      <p class="description">
+        <b>Controls:</b> {{ game.extraInfo.controls.join(", ") }}
+      </p>
+      <p class="description"><b>PEGI:</b> {{ game.extraInfo.pegi }}</p>
     </div>
     <div class="column">
       <img
@@ -13,19 +21,18 @@
       <a [href]="game.externalLink" target="_blank" class="button">
         VISIT WEBSITE
       </a>
-      <a href="/presskit" class="button secondary">
-        PRESSKIT
-      </a>
+      <a href="/presskit" class="button secondary"> PRESSKIT </a>
     </div>
   </div>
 
   <h2 class="subtitle">Screenshots</h2>
   <div class="gallery">
     <img
-      *ngFor="let screenshot of game.images.screenshots"
-      [src]="screenshot"
+      *ngFor="let screenshot of game.images.screenshots; let i = index"
+      [src]="screenshot.url"
+      [alt]="screenshot.alt"
+      (click)="openImage(i)"
       class="screenshot"
-      alt="Game screenshot"
     />
   </div>
 

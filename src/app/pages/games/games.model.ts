@@ -40,7 +40,10 @@ export interface Game {
   images: {
     logo: string;
     logoTransparent: string;
-    screenshots: string[];
+    screenshots: {
+      url: string;
+      alt: string;
+    }[];
   };
   video: {
     trailerYoutubeURL: string;
@@ -55,11 +58,11 @@ export const GAMES: Game[] = [
     id: 'echoes-of-madness',
     name: 'Echoes of Madness',
     description:
-      'Echoes of Madness is a spine-chilling horror game that plunges players into a terrifying and suspenseful experience. Set in a desolate and foreboding environment, the game combines elements of psychological horror and survival to create a truly immersive gameplay.\n\n' +
+      'Echoes of Madness is a spine-chilling horror game that will embark you into a terrifying and majestic experience. Set in a desolate and foreboding environment, the game combines elements of psychological horror and puzzle to create a truly immersive gameplay.\n\n' +
       "Prepare yourself for an unforgettable journey into the depths of madness, where your wits and sanity will be tested at every turn. Echoes of Madness is a game that will leave you questioning your own perception of reality and lingering in your thoughts long after you've finished playing.",
     extraInfo: {
       title: 'Echoes of Madness',
-      genre: 'Survival Puzzle Horror',
+      genre: 'Psychological Puzzle Horror',
       developer: 'Yuuko Games Studio',
       publisher: 'Yuuko Games Studio',
       production: 'Yuuko Games Studio',
@@ -71,9 +74,18 @@ export const GAMES: Game[] = [
       logo: 'assets/img/games/echoes-of-madness/miniatura.png',
       logoTransparent: 'assets/img/games/echoes-of-madness/logo.png',
       screenshots: [
-        'assets/img/games/echoes-of-madness/screenshots/car.png',
-        'assets/img/games/echoes-of-madness/screenshots/house.png',
-        'assets/img/games/echoes-of-madness/screenshots/grave.png',
+        {
+          url: 'assets/img/games/echoes-of-madness/screenshots/car.png',
+          alt: 'A police truck parked on the side of a road at night',
+        },
+        {
+          url: 'assets/img/games/echoes-of-madness/screenshots/house.png',
+          alt: 'A spooky house with lights open with two statues guarding the entrance',
+        },
+        {
+          url: 'assets/img/games/echoes-of-madness/screenshots/grave.png',
+          alt: 'A graveyard outside the house with creepy trees',
+        },
       ],
     },
     video: {

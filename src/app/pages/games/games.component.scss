@@ -1,6 +1,7 @@
 .game {
   position: relative;
   display: inline-block;
+  width: 100%;
 
   .game-name {
     position: absolute;
@@ -8,6 +9,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
   .game-logo {
     display: block;
     width: 100%;

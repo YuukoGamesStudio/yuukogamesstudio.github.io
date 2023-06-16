@@ -1,7 +1,7 @@
 import { Component, OnInit, Sanitizer } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GAMES, Game } from '../games.model';
-import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl, Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-game',
@@ -10,18 +10,28 @@ import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 })
 export class GameComponent implements OnInit {
   game!: Game;
-
   embedSafeUrl: SafeUrl = '';
+  currentId: number | null = null;
 
-  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer) {}
+  constructor(
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer,
+    private titleService: Title
+  ) {}
 
   ngOnInit() {
     this.route.params.subscribe((params) => {
-      const id = params['id']; // Assuming the parameter name is 'id'
+      const id = params['id'];
       this.game = GAMES.find((game) => game.id === id) ?? GAMES[0];
+      this.titleService.setTitle(`${this.game.name} - Yuuko Games`);
       this.embedSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
         this.game.video.embed
       );
     });
+  }
+
+  openImage(index: number | null): void {
+    this.currentId = index;
+    console.log(this.currentId);
   }
 }

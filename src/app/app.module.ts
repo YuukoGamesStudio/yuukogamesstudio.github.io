@@ -22,13 +22,10 @@ import { GameComponent } from './pages/games/game/game.component';
     HeaderComponent,
     NotFoundComponent,
     FooterComponent,
-    GameComponent
+    GameComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

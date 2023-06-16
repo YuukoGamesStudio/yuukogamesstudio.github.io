@@ -1,7 +1,7 @@
 @import "assets/scss/variables";
 
 .header {
-  z-index: 1000;
+  z-index: 10;
   position: fixed;
   top: 0;
   width: calc(100%);
@@ -16,6 +16,7 @@
 
 .main {
   background-color: $background-color;
+  min-height: 90vh;
 }
 
 .footer {
