@@ -9,11 +9,11 @@
         />
         <div class="separator"></div>
         <div class="links">
-          <a [href]="game.externalLink" target="_blank" class="button">
+          <a [href]="game.externalLink" target="_blank" class="button" attr.aria-label="Visit {{game.name}} website">
             VISIT WEBSITE
             <span class="material-icons icon-padding"> open_in_new </span>
           </a>
-          <a [href]="'games/' + game.id + '/presskit'" class="button secondary">
+          <a [href]="'games/' + game.id + '/presskit'" class="button secondary" attr.aria-label="Visit {{game.name}} presskit">
             PRESSKIT
           </a>
         </div>
