@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SOCIALS } from './socials.model';
 
 @Component({
   selector: 'app-footer',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class FooterComponent {
   currentYear = new Date().getFullYear();
+  socials = SOCIALS;
 }

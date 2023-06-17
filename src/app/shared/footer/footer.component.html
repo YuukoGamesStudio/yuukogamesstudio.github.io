@@ -1,8 +1,19 @@
-<a href="/">
-  <img src="assets/img/logo.png" draggable="false" class="logo" />
-</a>
-<br />
-<span>
-  &copy; {{ currentYear }} Yuuko Games Studio <br />
-  All Rights Reserved
-</span>
+<div class="wrapper">
+  <div class="studio-section">
+    <a href="/">
+      <img src="assets/img/logo.png" draggable="false" class="logo" />
+    </a>
+    <br />
+    <span>
+      &copy; {{ currentYear }} Yuuko Games Studio <br />
+      All Rights Reserved
+    </span>
+  </div>
+
+  <div class="socials-section">
+    <a *ngFor="let social of socials" [href]="social.url" class="social">
+      <img [src]="social.imageUrl" [alt]="social.text + ' icon'" class="icon" />
+      <span>{{ social.text }}</span>
+    </a>
+  </div>
+</div>

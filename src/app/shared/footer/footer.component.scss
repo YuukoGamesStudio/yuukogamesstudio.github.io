@@ -1,3 +1,35 @@
-.logo {
-  max-height: 4rem;
+@import "assets/scss/variables";
+
+.wrapper {
+  display: flex;
+  gap: 20vw;
+
+  .studio-section {
+    .logo {
+      max-height: 4rem;
+    }
+  }
+
+  .socials-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        color: $brand-color;
+        fill: $brand-color;
+      }
+
+      .icon {
+        width: 1rem;
+      }
+    }
+  }
 }
