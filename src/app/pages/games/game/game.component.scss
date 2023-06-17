@@ -84,20 +84,6 @@
   margin-top: 4rem;
 }
 
-.gallery {
-  display: grid;
-  width: 100%;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-
-  .screenshot {
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    // cursor: pointer; // Change this when doing the gallery
-  }
-}
-
 .video {
   aspect-ratio: 16 / 9;
   margin-bottom: 5rem;

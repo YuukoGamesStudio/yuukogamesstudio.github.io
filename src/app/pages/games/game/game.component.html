@@ -31,15 +31,7 @@
   </div>
 
   <h2 class="subtitle">Screenshots</h2>
-  <div class="gallery">
-    <img
-      *ngFor="let screenshot of game.images.screenshots; let i = index"
-      [src]="screenshot.url"
-      [alt]="screenshot.alt"
-      (click)="openImage(i)"
-      class="screenshot"
-    />
-  </div>
+  <app-gallery [images]="game.images.screenshots"></app-gallery>
 
   <h2 class="subtitle">Teaser Trailer</h2>
   <iframe

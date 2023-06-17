@@ -22,6 +22,11 @@ export enum Control {
   ProController = 'Nintendo Switch Pro Controller',
 }
 
+export interface Screenshot {
+  url: string;
+  alt: string;
+}
+
 export interface Game {
   id: string;
   name: string;
@@ -40,10 +45,7 @@ export interface Game {
   images: {
     logo: string;
     logoTransparent: string;
-    screenshots: {
-      url: string;
-      alt: string;
-    }[];
+    screenshots: Screenshot[];
   };
   video: {
     trailerYoutubeURL: string;

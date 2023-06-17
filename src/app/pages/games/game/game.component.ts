@@ -1,4 +1,4 @@
-import { Component, OnInit, Sanitizer } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { GAMES, Game } from '../games.model';
 import { DomSanitizer, SafeUrl, Title } from '@angular/platform-browser';

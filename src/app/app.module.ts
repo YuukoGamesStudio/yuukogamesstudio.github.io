@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from '@pages/home/home.component';
@@ -12,6 +13,9 @@ import { NotFoundComponent } from '@pages/not-found/not-found.component';
 import { FooterComponent } from '@shared/footer/footer.component';
 import { GameComponent } from './pages/games/game/game.component';
 import { ContactComponent } from './pages/contact/contact.component';
+import { GalleryComponent } from './pages/games/game/gallery/gallery.component';
+import { GalleryModule } from 'ng-gallery';
+import { LightboxModule } from 'ng-gallery/lightbox';
 
 @NgModule({
   declarations: [
@@ -25,8 +29,15 @@ import { ContactComponent } from './pages/contact/contact.component';
     FooterComponent,
     GameComponent,
     ContactComponent,
+    GalleryComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    GalleryModule,
+    LightboxModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
