@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HOME_DYNAMIC_TEXTS } from './home.model';
 
 @Component({
   selector: 'app-home',
@@ -8,4 +9,6 @@ import { Component } from '@angular/core';
     class: 'display-flex',
   },
 })
-export class HomeComponent {}
+export class HomeComponent {
+  homeDynamicTexts = HOME_DYNAMIC_TEXTS;
+}

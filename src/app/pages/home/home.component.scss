@@ -3,3 +3,27 @@
   height: 100vh;
   object-fit: cover;
 }
+
+.over-all {
+  z-index: 99;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-shadow: 2px 2px 2px black;
+  text-align: center;
+  width: 100%;
+
+  .title {
+    font-size: 3rem;
+
+    .dynamic-text {
+      font-weight: normal;
+    }
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    font-weight: normal;
+  }
+}

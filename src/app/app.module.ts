@@ -16,6 +16,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { GalleryComponent } from './pages/games/game/gallery/gallery.component';
 import { GalleryModule } from 'ng-gallery';
 import { LightboxModule } from 'ng-gallery/lightbox';
+import { AnimatedTextComponent } from './shared/animated-text/animated-text.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { LightboxModule } from 'ng-gallery/lightbox';
     GameComponent,
     ContactComponent,
     GalleryComponent,
+    AnimatedTextComponent,
   ],
   imports: [
     BrowserModule,
