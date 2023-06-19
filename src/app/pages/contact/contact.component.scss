@@ -1,0 +1,43 @@
+@import "assets/scss/variables";
+
+.contact-container {
+  display: flex;
+  width: 100%;
+  gap: 16px;
+
+  .column {
+    width: 50%;
+  }
+
+  .socials-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .social {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      color: white;
+      text-decoration: none;
+      width: fit-content;
+
+      &:hover {
+        color: $brand-color;
+        fill: $brand-color;
+      }
+
+      .icon {
+        width: 1rem;
+      }
+    }
+  }
+
+  .link {
+    color: white;
+
+    &:hover {
+      color: $brand-color;
+    }
+  }
+}
