@@ -29,6 +29,6 @@ export class GameGuard implements CanActivate {
     const exists = GAMES.some((game) => game.id === urlId);
 
     // Return true if the ID exists, otherwise navigate to a different route
-    return exists || this.router.createUrlTree(['/not-found']);
+    return exists || this.router.navigate(['/not-found']);
   }
 }

@@ -1,3 +1,75 @@
 <div class="page-container">
   <h1>PRESSKIT</h1>
+  <img
+    [src]="game.images.logo"
+    class="full-width"
+    alt="Echoes of Madness logo"
+  />
+
+  <div class="columns">
+    <div>
+      <h2>Facts sheet</h2>
+      <p><b>Genre:</b> {{ game.extraInfo.genre }}</p>
+      <p><b>Platforms:</b> {{ game.extraInfo.platforms.join(", ") }}</p>
+      <p><b>Controls:</b> {{ game.extraInfo.controls.join(", ") }}</p>
+      <p><b>PEGI:</b> {{ game.extraInfo.pegi }}</p>
+      <p><b>Developer:</b> {{ game.extraInfo.developer }}</p>
+      <p><b>Publisher:</b> {{ game.extraInfo.publisher }}</p>
+      <p><b>Production:</b> {{ game.extraInfo.production }}</p>
+      <p>
+        <b>Release Date:</b> {{ (game.extraInfo.releaseDate | date) ?? "TBA" }}
+      </p>
+    </div>
+    <div class="description">
+      <h2>Description</h2>
+      <div [innerHTML]="game.description" class="description-text"></div>
+    </div>
+  </div>
+  <h2>Videos</h2>
+
+  <iframe
+    width="100%"
+    class="video"
+    [src]="embedSafeUrl"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+    allowfullscreen
+  ></iframe>
+
+  <h2>Screenshots</h2>
+  <img
+    *ngFor="let img of game.images.screenshots"
+    [src]="img.url"
+    class="screenshot"
+    [alt]="img.alt"
+  />
+
+  <h2>Logos & Art</h2>
+  <img
+    [src]="game.images.logoTransparent"
+    class="screenshot"
+    alt="Game logo image transparent"
+  />
+  <img [src]="game.images.logo" class="screenshot" alt="Game logo image" />
+
+  <h2>External Links</h2>
+  <div class="links-section">
+    <a
+      *ngFor="let link of game.otherLinks"
+      [href]="link.url"
+      class="external-link"
+      attr.aria-label="Visit Yuuko Games {{ link.text }} website"
+    >
+      <img [src]="link.imageUrl" [alt]="link.text + ' icon'" class="icon" />
+      <span>{{ link.text }}</span>
+    </a>
+  </div>
+
+  <h2>Contact</h2>
+  <p class="margin-bottom">
+    For further contact about the game, you can
+    <a href="/contact" class="link" aria-label="Go to contact page">
+      contact us
+    </a>
+  </p>
 </div>

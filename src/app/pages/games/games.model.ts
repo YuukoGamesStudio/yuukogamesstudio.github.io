@@ -1,7 +1,9 @@
 export enum Platform {
   PS4 = 'PlayStation 4',
   PS5 = 'PlayStation 5',
-  PC = 'PC',
+  ItchIo = 'Itch.io',
+  Steam = 'Steam',
+  GOG = 'GOG',
   XboxOne = 'Xbox One',
   XboxSeriesX = 'Xbox Series X',
   NintendoSwitch = 'Nintendo Switch',
@@ -38,7 +40,7 @@ export interface Game {
     publisher: string;
     production: string;
     releaseDate?: Date;
-    pegi?: string;
+    pegi: string;
     platforms: Platform[];
     controls: Control[];
   };
@@ -53,6 +55,11 @@ export interface Game {
     embed: string;
   };
   externalLink: string;
+  otherLinks: {
+    text: string;
+    url: string;
+    imageUrl: string;
+  }[];
 }
 
 export const GAMES: Game[] = [
@@ -69,7 +76,7 @@ export const GAMES: Game[] = [
       publisher: 'Yuuko Games Studio',
       production: 'Yuuko Games Studio',
       pegi: 'TBC',
-      platforms: [Platform.PC],
+      platforms: [Platform.Steam, Platform.ItchIo],
       controls: [Control.KeyboardAndMouse, Control.ControllerAny],
     },
     images: {
@@ -96,5 +103,17 @@ export const GAMES: Game[] = [
       embed: 'https://www.youtube.com/embed/LID7j7g_H04',
     },
     externalLink: 'https://yuukogames.itch.io/echoes-of-madness',
+    otherLinks: [
+      {
+        text: 'Itch.io',
+        url: 'https://yuukogames.itch.io/echoes-of-madness',
+        imageUrl: 'assets/img/socials/itch-io.svg',
+      },
+      {
+        text: 'Website',
+        url: 'https://yuukogamesstudio.github.io/games/echoes-of-madness',
+        imageUrl: 'assets/img/socials/website.svg',
+      },
+    ],
   },
 ];
