@@ -25,8 +25,9 @@
       <div [innerHTML]="game.description" class="description-text"></div>
     </div>
   </div>
-  <h2>Videos</h2>
 
+  <div class="separator"></div>
+  <h2>Videos</h2>
   <iframe
     width="100%"
     class="video"
@@ -36,6 +37,7 @@
     allowfullscreen
   ></iframe>
 
+  <div class="separator"></div>
   <h2>Screenshots</h2>
   <img
     *ngFor="let img of game.images.screenshots"
@@ -44,6 +46,7 @@
     [alt]="img.alt"
   />
 
+  <div class="separator"></div>
   <h2>Logos & Art</h2>
   <img
     [src]="game.images.logoTransparent"
@@ -52,6 +55,7 @@
   />
   <img [src]="game.images.logo" class="screenshot" alt="Game logo image" />
 
+  <div class="separator"></div>
   <h2>External Links</h2>
   <div class="links-section">
     <a
@@ -65,6 +69,7 @@
     </a>
   </div>
 
+  <div class="separator"></div>
   <h2>Contact</h2>
   <p class="margin-bottom">
     For further contact about the game, you can
