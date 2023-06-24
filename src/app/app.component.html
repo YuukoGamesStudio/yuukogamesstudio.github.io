@@ -1,8 +1,8 @@
 <header class="header">
   <app-header class="container"></app-header>
 </header>
-<main class="main">
-  <router-outlet></router-outlet>
+<main class="main" [@fadeAnimation]="outlet.isActivated ? outlet.activatedRoute : ''">
+  <router-outlet #outlet="outlet"></router-outlet>
 </main>
 <footer class="footer">
   <app-footer></app-footer>
