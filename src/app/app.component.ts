@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
-import { fadeAnimation } from './animations';
+import { fadeAnimation } from './animations.config';
 
 @Component({
   selector: 'app-root',
