@@ -7,7 +7,7 @@ export interface Social {
 export const SOCIALS: Social[] = [
   {
     text: 'Twitter',
-    imageUrl: 'assets/img/socials/twitter.svg',
+    imageUrl: 'assets/img/socials/x.svg',
     url: 'https://twitter.com/YuukoGames',
   },
   {
