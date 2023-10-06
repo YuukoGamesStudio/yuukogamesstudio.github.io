@@ -64,13 +64,13 @@ export interface Game {
 
 export const GAMES: Game[] = [
   {
-    id: 'echoes-of-madness',
-    name: 'Echoes of Madness',
+    id: 'whispers-of-insanity',
+    name: 'Whispers of Insanity',
     description:
-      '<b>Echoes of Madness</b> is a spine-chilling horror game that will embark you into a terrifying and majestic experience. Set in a desolate and foreboding environment, the game combines elements of psychological horror and puzzle to create a truly immersive gameplay.\n\n' +
-      "Prepare yourself for an unforgettable journey into the depths of madness, where your wits and sanity will be tested at every turn. <b>Echoes of Madness</b> is a game that will leave you questioning your own perception of reality and lingering in your thoughts long after you've finished playing.",
+      '<b>Whispers of Insanity</b> is a spine-chilling horror game that will embark you into a terrifying and majestic experience. Set in a desolate and foreboding environment, the game combines elements of psychological horror and puzzle to create a truly immersive gameplay.\n\n' +
+      "Prepare yourself for an unforgettable journey into the depths of insanity, where your wits and sanity will be tested at every turn. <b>Whispers of Insanity</b> is a game that will leave you questioning your own perception of reality and lingering in your thoughts long after you've finished playing.",
     extraInfo: {
-      title: 'Echoes of Madness',
+      title: 'Whispers of Insanity',
       genre: 'Psychological Puzzle Horror',
       developer: 'Yuuko Games Studio',
       publisher: 'Yuuko Games Studio',
@@ -80,19 +80,19 @@ export const GAMES: Game[] = [
       controls: [Control.KeyboardAndMouse, Control.ControllerAny],
     },
     images: {
-      logo: 'assets/img/games/echoes-of-madness/miniatura.png',
-      logoTransparent: 'assets/img/games/echoes-of-madness/logo.png',
+      logo: 'assets/img/games/whispers-of-insanity/miniatura.png',
+      logoTransparent: 'assets/img/games/whispers-of-insanity/logo.png',
       screenshots: [
         {
-          url: 'assets/img/games/echoes-of-madness/screenshots/car.png',
+          url: 'assets/img/games/whispers-of-insanity/screenshots/car.png',
           alt: 'A police truck parked on the side of a road at night',
         },
         {
-          url: 'assets/img/games/echoes-of-madness/screenshots/house.png',
+          url: 'assets/img/games/whispers-of-insanity/screenshots/house.png',
           alt: 'A spooky house with lights open with two statues guarding the entrance',
         },
         {
-          url: 'assets/img/games/echoes-of-madness/screenshots/grave.png',
+          url: 'assets/img/games/whispers-of-insanity/screenshots/grave.png',
           alt: 'A graveyard outside the house with creepy trees',
         },
       ],
@@ -102,16 +102,16 @@ export const GAMES: Game[] = [
       trailerYoutubeURL: 'https://youtu.be/LID7j7g_H04',
       embed: 'https://www.youtube.com/embed/LID7j7g_H04',
     },
-    externalLink: 'https://yuukogames.itch.io/echoes-of-madness',
+    externalLink: 'https://yuukogames.itch.io/whispers-of-insanity',
     otherLinks: [
       {
         text: 'Itch.io',
-        url: 'https://yuukogames.itch.io/echoes-of-madness',
+        url: 'https://yuukogames.itch.io/whispers-of-insanity',
         imageUrl: 'assets/img/socials/itch-io.svg',
       },
       {
         text: 'Website',
-        url: 'https://yuukogamesstudio.github.io/games/echoes-of-madness',
+        url: 'https://yuukogamesstudio.github.io/games/whispers-of-insanity',
         imageUrl: 'assets/img/socials/website.svg',
       },
     ],
