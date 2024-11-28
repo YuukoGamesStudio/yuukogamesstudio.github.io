@@ -1,3 +1,5 @@
 <div class="gallery" gallerize>
-  <img *ngFor="let img of images" [src]="img.url" class="screenshot" [alt]="img.alt" />
+  @for (img of images(); track $index) {
+    <img [src]="img.url" class="screenshot" [alt]="img.alt" />
+  }
 </div>

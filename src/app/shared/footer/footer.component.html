@@ -11,9 +11,11 @@
   </div>
 
   <div class="socials-section">
-    <a *ngFor="let social of socials" [href]="social.url" class="social" attr.aria-label="Visit Yuuko Games {{social.text}} website">
-      <img [src]="social.imageUrl" [alt]="social.text + ' icon'" class="icon" />
-      <span>{{ social.text }}</span>
-    </a>
+    @for (social of socials; track $index) {
+      <a [href]="social.url" class="social" attr.aria-label="Visit Yuuko Games {{social.text}} website">
+        <img [src]="social.imageUrl" [alt]="social.text + ' icon'" class="icon" />
+        <span>{{ social.text }}</span>
+      </a>
+    }
   </div>
 </div>

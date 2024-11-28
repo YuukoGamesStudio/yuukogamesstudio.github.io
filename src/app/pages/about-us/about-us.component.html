@@ -1,13 +1,11 @@
 <div class="page-container">
   <h1>OUR TEAM</h1>
   <div class="grid">
-    <div
-      *ngFor="let member of members"
-      class="member"
-      [ngStyle]="{ 'background-image': 'url(' + member.profilePicture + ')' }"
-    >
+    @for (member of members; track $index) {
+    <div class="member" [style.background-image]="'url(' + member.profilePicture + ')'">
       <p class="name">{{ member.name }}</p>
       <p class="job">{{ member.job }}</p>
     </div>
+    }
   </div>
 </div>
