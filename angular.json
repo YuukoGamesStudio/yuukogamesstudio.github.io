@@ -72,10 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "yuukogames-webpage:build:production"
+              "buildTarget": "yuukogames-webpage:build:production"
             },
             "development": {
-              "browserTarget": "yuukogames-webpage:build:development"
+              "buildTarget": "yuukogames-webpage:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -83,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "yuukogames-webpage:build"
+            "buildTarget": "yuukogames-webpage:build"
           }
         },
         "test": {
