@@ -11,7 +11,7 @@ export class AnimatedTextComponent implements OnInit {
 
   currentWordIndex: number = 0;
   dynamicText: string = '';
-  currentInterval!: NodeJS.Timer;
+  currentInterval!: NodeJS.Timeout;
 
   ngOnInit(): void {
     this.dynamicText = '';
