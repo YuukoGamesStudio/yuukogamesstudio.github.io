@@ -1,2 +1,4 @@
 <span>{{ dynamicText }}</span>
-<span *ngIf="cursor" class="typing-cursor">|</span>
+@if (showCursor()) {
+    <span class="typing-cursor">|</span>
+}

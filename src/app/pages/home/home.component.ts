@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnimatedTextComponent } from "../../shared/animated-text/animated-text.component";
 import { HOME_DYNAMIC_TEXTS } from './home.model';
 
 @Component({
@@ -8,6 +9,7 @@ import { HOME_DYNAMIC_TEXTS } from './home.model';
   host: {
     class: 'display-flex',
   },
+  imports: [AnimatedTextComponent],
 })
 export class HomeComponent {
   homeDynamicTexts = HOME_DYNAMIC_TEXTS;

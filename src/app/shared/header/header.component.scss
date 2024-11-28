@@ -1,4 +1,4 @@
-@import "assets/scss/variables";
+@use "scss/variables" as var;
 
 .logo {
   height: 3rem;
@@ -14,7 +14,7 @@
   transition: color 0.1s ease-in-out;
 
   &:hover {
-    color: $brand-color;
+    color: var.$brand-color;
   }
 
   .name {

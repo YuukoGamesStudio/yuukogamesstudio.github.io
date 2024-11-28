@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { DomSanitizer, SafeUrl, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -7,6 +8,7 @@ import { GAMES, Game } from '@pages/games/games.model';
   selector: 'app-presskit',
   templateUrl: './presskit.component.html',
   styleUrls: ['./presskit.component.scss'],
+  imports: [DatePipe]
 })
 export class PresskitComponent {
   game: Game = GAMES[0];
