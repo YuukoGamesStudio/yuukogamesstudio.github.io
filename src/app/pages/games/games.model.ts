@@ -84,6 +84,18 @@ export const GAMES: Game[] = [
       logoTransparent: 'assets/img/games/whispers-of-insanity/logo.png',
       screenshots: [
         {
+          url: 'assets/img/games/whispers-of-insanity/screenshots/estatua.png',
+          alt: 'A spooky house with a giant statue of a demon. At the back of the statue, a giant door is opening',
+        },
+        {
+          url: 'assets/img/games/whispers-of-insanity/screenshots/fire.png',
+          alt: 'A burning building with a demonic figure in the side',
+        },
+        {
+          url: 'assets/img/games/whispers-of-insanity/screenshots/llibre.png',
+          alt: 'A dim room with some books stacked on top of each other',
+        },
+        {
           url: 'assets/img/games/whispers-of-insanity/screenshots/car.png',
           alt: 'A police truck parked on the side of a road at night',
         },
