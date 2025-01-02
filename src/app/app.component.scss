@@ -1,4 +1,4 @@
-@import "assets/scss/variables";
+@use "scss/variables" as var;
 
 .header {
   z-index: 100;
@@ -15,7 +15,7 @@
 }
 
 .main {
-  background-color: $background-color;
+  background-color: var.$background-color;
   min-height: 90vh;
   position: relative;
 }

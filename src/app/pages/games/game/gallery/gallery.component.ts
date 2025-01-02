@@ -1,8 +1,7 @@
 import {
-  ChangeDetectionStrategy,
   Component,
-  Input,
   OnInit,
+  input
 } from '@angular/core';
 import { Screenshot } from '@pages/games/games.model';
 import {
@@ -18,17 +17,15 @@ import { Lightbox } from 'ng-gallery/lightbox';
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class GalleryComponent implements OnInit {
-  @Input() images: Screenshot[] = [];
+  readonly images = input<Screenshot[]>([]);
   items: GalleryItem[] = [];
 
   constructor(public gallery: Gallery, public lightbox: Lightbox) {}
 
   ngOnInit(): void {
-    this.items = this.images.map(item => new ImageItem({ src: item.url, thumb: item.url }));
-
+    this.items = this.images().map(item => new ImageItem({ src: item.url, thumb: item.url }));
 
     // Get a lightbox gallery ref
     const lightboxRef = this.gallery.ref('lightbox');
