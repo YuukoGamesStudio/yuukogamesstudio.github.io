@@ -11,12 +11,13 @@ import {
   ImageSize,
   ThumbnailsPosition,
 } from 'ng-gallery';
-import { Lightbox } from 'ng-gallery/lightbox';
+import { Lightbox, LightboxModule } from 'ng-gallery/lightbox';
 
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss'],
+  imports: [LightboxModule],
 })
 export class GalleryComponent implements OnInit {
   readonly images = input<Screenshot[]>([]);

@@ -15,7 +15,7 @@
             class="button"
             attr.aria-label="Visit {{ game.name }} website"
           >
-            VISIT WEBSITE
+            PLAY NOW
             <span class="material-icons icon-padding"> open_in_new </span>
           </a>
           <a
@@ -28,6 +28,7 @@
         </div>
       </div>
       <div class="description margin" [innerHTML]="game.description"></div>
+      <br>
       <p class="description"><b>Genre:</b> {{ game.extraInfo.genre }}</p>
       <p class="description">
         <b>Platforms:</b> {{ game.extraInfo.platforms.join(", ") }}
@@ -35,7 +36,9 @@
       <p class="description">
         <b>Controls:</b> {{ game.extraInfo.controls.join(", ") }}
       </p>
-      <p class="description"><b>PEGI:</b> {{ game.extraInfo.pegi }}</p>
+      @if (game.extraInfo.pegi) {
+        <p class="description"><b>PEGI:</b> {{ game.extraInfo.pegi }}</p>
+      }
     </div>
   </div>
 

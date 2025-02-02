@@ -8,13 +8,13 @@ import { LIGHTBOX_CONFIG, LightboxConfig } from 'ng-gallery/lightbox';
 
 bootstrapApplication(AppComponent, {
     providers: [
-      provideAnimations(),
       provideRouter(routes),
+      provideAnimations(),
       {
         provide: LIGHTBOX_CONFIG,
         useValue: {
-          keyboardShortcuts: false,
-          exitAnimationTime: 1000,
+          keyboardShortcuts: true,
+          exitAnimationTime: 200,
         } as LightboxConfig,
       },
     ],

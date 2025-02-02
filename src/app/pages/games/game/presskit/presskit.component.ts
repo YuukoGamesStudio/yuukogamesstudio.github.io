@@ -1,6 +1,6 @@
 import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
-import { DomSanitizer, SafeUrl, Title } from '@angular/platform-browser';
+import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { GAMES, Game } from '@pages/games/games.model';
 
@@ -17,6 +17,7 @@ export class PresskitComponent {
   constructor(
     private route: ActivatedRoute,
     private titleService: Title,
+    private metaService: Meta,
     private sanitizer: DomSanitizer
   ) {}
 
@@ -28,6 +29,21 @@ export class PresskitComponent {
       this.embedSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
         this.game.video.embed
       );
+
+      this.metaService.updateTag({
+        property: 'og:title',
+        content: `${this.game.name} Presskit - Yuuko Games`,
+      });
+
+      this.metaService.updateTag({
+        property: 'og:description',
+        content: this.game.description,
+      });
+
+      this.metaService.updateTag({
+        property: 'og:image',
+        content: this.game.images.logo,
+      });
 
       this.titleService.setTitle(`${this.game.name} Presskit - Yuuko Games`);
     });
