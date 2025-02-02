@@ -42,6 +42,11 @@ export class GameComponent implements OnInit {
         content: this.game.images.logo,
       });
 
+      this.metaService.updateTag({
+        property: 'og:url',
+        content: `https://yuukogamesstudio.github.io/games/${this.game.id}/`,
+      });
+
       this.titleService.setTitle(`${this.game.name} - Yuuko Games`);
 
       this.embedSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(

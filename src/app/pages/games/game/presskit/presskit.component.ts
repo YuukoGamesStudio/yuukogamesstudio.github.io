@@ -45,6 +45,11 @@ export class PresskitComponent {
         content: this.game.images.logo,
       });
 
+      this.metaService.updateTag({
+        property: 'og:url',
+        content: `https://yuukogamesstudio.github.io/games/${this.game.id}/presskit/`,
+      });
+
       this.titleService.setTitle(`${this.game.name} Presskit - Yuuko Games`);
     });
   }
