@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 
 @Component({
   selector: 'app-animated-text',
@@ -6,12 +6,12 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./animated-text.component.scss'],
 })
 export class AnimatedTextComponent implements OnInit {
-  @Input() texts: string[] = [''];
-  @Input() cursor: boolean = false;
+  readonly texts = input<string[]>(['']);
+  readonly showCursor = input<boolean>(false);
 
   currentWordIndex: number = 0;
   dynamicText: string = '';
-  currentInterval!: NodeJS.Timer;
+  currentInterval!: NodeJS.Timeout;
 
   ngOnInit(): void {
     this.dynamicText = '';
@@ -19,11 +19,11 @@ export class AnimatedTextComponent implements OnInit {
   }
 
   private writeNextCharacter(that: this) {
-    that.dynamicText += that.texts[that.currentWordIndex].charAt(
+    that.dynamicText += that.texts()[that.currentWordIndex].charAt(
       that.dynamicText.length
     );
 
-    if (that.dynamicText.length >= that.texts[that.currentWordIndex].length) {
+    if (that.dynamicText.length >= that.texts()[that.currentWordIndex].length) {
       clearInterval(that.currentInterval);
       setTimeout(() => {
         that.currentInterval = setInterval(that.eraseLastCharacter, 50, that);
@@ -36,7 +36,7 @@ export class AnimatedTextComponent implements OnInit {
 
     if (that.dynamicText.length <= 0) {
       clearInterval(that.currentInterval);
-      that.currentWordIndex = (that.currentWordIndex + 1) % that.texts.length;
+      that.currentWordIndex = (that.currentWordIndex + 1) % that.texts().length;
       setTimeout(() => {
         that.currentInterval = setInterval(that.writeNextCharacter, 100, that);
       }, 500);

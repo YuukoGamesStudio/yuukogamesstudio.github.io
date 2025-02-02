@@ -1,34 +1,31 @@
 <div class="page-container">
   <h1>GAMES</h1>
-  <div
-    *ngFor="let game of games"
-    (mouseenter)="toggleHover(game.id)"
-    (mouseleave)="toggleHover(null)"
-  >
-    <a [href]="'games/' + game.id" class="game" aria-label="Games">
-      <img
-        [ngStyle]="{ display: currentHover !== game.id ? 'block' : 'none' }"
-        [src]="game.images.logo"
-        class="game-logo"
-        alt="Game logo image"
-      />
-      <video
-        [ngStyle]="{ display: currentHover === game.id ? 'block' : 'none' }"
-        [src]="game.video.shortVideo"
-        class="game-logo"
-        alt="Game logo video"
-        [muted]="'muted'"
-        loop
-        autoplay
-      ></video>
-      <div
-        class="overlay"
-        *ngIf="{ display: currentHover === game.id ? 'block' : 'none' }"
-      >
-        <span class="game-text">{{ game.name }}</span>
-      </div>
-    </a>
-  </div>
+  @for (game of games; track $index) {
+    <div (mouseenter)="toggleHover(game.id)" (mouseleave)="toggleHover(null)">
+      <a [href]="'games/' + game.id" class="game" aria-label="Games">
+        <img
+          [style.display]="currentHover !== game.id ? 'block' : 'none'"
+          [src]="game.images.logo"
+          class="game-logo"
+          alt="Game logo image"
+        />
+        <video
+          [style.display]="currentHover === game.id ? 'block' : 'none'"
+          [src]="game.video.shortVideo"
+          class="game-logo"
+          alt="Game logo video"
+          [muted]="'muted'"
+          loop
+          autoplay
+        ></video>
+        @if (currentHover === game.id) {
+          <div class="overlay">
+            <span class="game-text">{{ game.name }}</span>
+          </div>
+        }
+      </a>
+    </div>
+  }
 
   <p class="more">And more to come...</p>
 </div>

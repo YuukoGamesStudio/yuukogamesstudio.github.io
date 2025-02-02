@@ -39,12 +39,9 @@
 
   <div class="separator"></div>
   <h2>Screenshots</h2>
-  <img
-    *ngFor="let img of game.images.screenshots"
-    [src]="img.url"
-    class="screenshot"
-    [alt]="img.alt"
-  />
+  @for (img of game.images.screenshots; track $index) {
+    <img [src]="img.url" class="screenshot" [alt]="img.alt" />
+  }
 
   <div class="separator"></div>
   <h2>Logos & Art</h2>
@@ -58,15 +55,12 @@
   <div class="separator"></div>
   <h2>External Links</h2>
   <div class="links-section">
-    <a
-      *ngFor="let link of game.otherLinks"
-      [href]="link.url"
-      class="external-link"
-      attr.aria-label="Visit Yuuko Games {{ link.text }} website"
-    >
-      <img [src]="link.imageUrl" [alt]="link.text + ' icon'" class="icon" />
-      <span>{{ link.text }}</span>
-    </a>
+    @for (link of game.otherLinks; track $index) {
+      <a [href]="link.url" class="external-link" attr.aria-label="Visit Yuuko Games {{ link.text }} website">
+        <img [src]="link.imageUrl" [alt]="link.text + ' icon'" class="icon" />
+        <span>{{ link.text }}</span>
+      </a>
+    }
   </div>
 
   <div class="separator"></div>

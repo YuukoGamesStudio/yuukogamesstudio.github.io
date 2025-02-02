@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { DomSanitizer, SafeUrl, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { GAMES, Game } from '../games.model';
-import { DomSanitizer, SafeUrl, Title } from '@angular/platform-browser';
+import { GalleryComponent } from "./gallery/gallery.component";
 
 @Component({
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
+  imports: [GalleryComponent],
 })
 export class GameComponent implements OnInit {
   game!: Game;

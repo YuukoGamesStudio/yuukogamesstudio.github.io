@@ -1,11 +1,15 @@
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+import { bootstrapApplication } from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
+import { provideRouter } from '@angular/router';
+import { routes } from 'app/app-routing.module';
+import { AppComponent } from 'app/app.component';
 import { LIGHTBOX_CONFIG, LightboxConfig } from 'ng-gallery/lightbox';
 
-import { AppModule } from './app/app.module';
 
-platformBrowserDynamic()
-  .bootstrapModule(AppModule, {
+bootstrapApplication(AppComponent, {
     providers: [
+      provideAnimations(),
+      provideRouter(routes),
       {
         provide: LIGHTBOX_CONFIG,
         useValue: {

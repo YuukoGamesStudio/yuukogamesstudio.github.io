@@ -1,15 +1,14 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes } from '@angular/router';
 import { AboutUsComponent } from '@pages/about-us/about-us.component';
 import { ContactComponent } from '@pages/contact/contact.component';
 import { GameComponent } from '@pages/games/game/game.component';
 import { GameGuard } from '@pages/games/game/game.guard';
+import { PresskitComponent } from '@pages/games/game/presskit/presskit.component';
 import { GamesComponent } from '@pages/games/games.component';
 import { HomeComponent } from '@pages/home/home.component';
 import { NotFoundComponent } from '@pages/not-found/not-found.component';
-import { PresskitComponent } from '@pages/games/game/presskit/presskit.component';
 
-const routes: Routes = [
+export const routes: Routes = [
   {
     path: '',
     component: HomeComponent,
@@ -49,9 +48,3 @@ const routes: Routes = [
   },
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
-  providers: [GameGuard],
-})
-export class AppRoutingModule {}

@@ -1,4 +1,4 @@
-@import "assets/scss/variables";
+@use "scss/variables" as var;
 
 .contact-container {
   display: flex;
@@ -23,8 +23,8 @@
       width: fit-content;
 
       &:hover {
-        color: $brand-color;
-        fill: $brand-color;
+        color: var.$brand-color;
+        fill: var.$brand-color;
       }
 
       .icon {
@@ -37,7 +37,7 @@
     color: white;
 
     &:hover {
-      color: $brand-color;
+      color: var.$brand-color;
     }
   }
 }
