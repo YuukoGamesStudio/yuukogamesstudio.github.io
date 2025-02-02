@@ -36,7 +36,9 @@
       <p class="description">
         <b>Controls:</b> {{ game.extraInfo.controls.join(", ") }}
       </p>
-      <p class="description"><b>PEGI:</b> {{ game.extraInfo.pegi }}</p>
+      @if (game.extraInfo.pegi) {
+        <p class="description"><b>PEGI:</b> {{ game.extraInfo.pegi }}</p>
+      }
     </div>
   </div>
 

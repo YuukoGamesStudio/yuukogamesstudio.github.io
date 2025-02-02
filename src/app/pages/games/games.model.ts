@@ -40,7 +40,7 @@ export interface Game {
     publisher: string;
     production: string;
     releaseDate?: Date;
-    pegi: string;
+    pegi?: string;
     platforms: Platform[];
     controls: Control[];
   };
@@ -74,7 +74,6 @@ export const GAMES: Game[] = [
       developer: 'Yuuko Games Studio',
       publisher: 'Yuuko Games Studio',
       production: 'Yuuko Games Studio',
-      pegi: 'TBC',
       platforms: [Platform.ItchIo],
       controls: [Control.KeyboardAndMouse],
     },
