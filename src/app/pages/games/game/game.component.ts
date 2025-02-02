@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DomSanitizer, SafeUrl, Title } from '@angular/platform-browser';
+import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { GAMES, Game } from '../games.model';
 import { GalleryComponent } from "./gallery/gallery.component";
@@ -18,6 +18,7 @@ export class GameComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private sanitizer: DomSanitizer,
+    private metaService: Meta,
     private titleService: Title
   ) {}
 
@@ -25,7 +26,24 @@ export class GameComponent implements OnInit {
     this.route.params.subscribe((params) => {
       const id = params['id'];
       this.game = GAMES.find((game) => game.id === id) ?? GAMES[0];
+
+      this.metaService.updateTag({
+        property: 'og:title',
+        content: `${this.game.name} - Yuuko Games`,
+      });
+
+      this.metaService.updateTag({
+        property: 'og:description',
+        content: this.game.description,
+      });
+
+      this.metaService.updateTag({
+        property: 'og:image',
+        content: this.game.images.logo,
+      });
+
       this.titleService.setTitle(`${this.game.name} - Yuuko Games`);
+
       this.embedSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
         this.game.video.embed
       );

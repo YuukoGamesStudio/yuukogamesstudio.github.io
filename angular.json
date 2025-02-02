@@ -53,16 +53,18 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "namedChunks": true,
+              "extractLicenses": true,
+              "sourceMap": false
             },
             "development": {
+              "outputHashing": "all",
               "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
+              "sourceMap": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": "development"
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
