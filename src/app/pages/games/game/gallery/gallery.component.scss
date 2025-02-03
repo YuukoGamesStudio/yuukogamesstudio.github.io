@@ -9,5 +9,10 @@
     width: 100%;
     height: auto;
     border-radius: 12px;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
