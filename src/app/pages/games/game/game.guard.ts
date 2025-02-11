@@ -1,10 +1,9 @@
 import { Injectable } from '@angular/core';
 import {
-  CanActivate,
   ActivatedRouteSnapshot,
-  RouterStateSnapshot,
-  UrlTree,
+  CanActivate,
   Router,
+  UrlTree
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GAMES } from '../games.model';
@@ -27,6 +26,14 @@ export class GameGuard implements CanActivate {
 
     // Check if the URL ID exists in the array
     const exists = GAMES.some((game) => game.id === urlId);
+
+    // If there's no game with this ID but it is part of the redirectLinks array, redirect to the original url
+    if (!exists) {
+      const game = GAMES.find((game) => game.redirectLinks.includes(urlId));
+      if (game) {
+        return this.router.navigate(['games', game.id]);
+      }
+    }
 
     // Return true if the ID exists, otherwise navigate to a different route
     return exists || this.router.navigate(['/not-found']);
