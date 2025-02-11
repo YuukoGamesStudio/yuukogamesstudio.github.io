@@ -69,7 +69,7 @@ export const GAMES: Game[] = [
     name: 'The Forbidden Door',
     description: '<b>The Forbidden Door</b> is a spine-chilling horror puzzle game where you step into an abandoned house once used by a coven to summon a demon. As you investigate its dark past, you’ll uncover cryptic clues, solve eerie puzzles, and experience terrifying encounters. But whatever you do — keep the door closed. If it opens, the devil may escape, and there will be no turning back.\n\n' +
     'Will you unravel the mystery, or will you become the next victim of the forbidden ritual?',
-    redirectLinks: ['echoes-of-madness', 'echoes-of-maddness'],
+    redirectLinks: ['echoes-of-madness', 'echoes-of-maddness', 'whispers-of-insanity'],
     extraInfo: {
       title: 'The Forbidden Door',
       genre: 'Psychological Puzzle Horror',
