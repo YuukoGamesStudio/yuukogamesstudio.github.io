@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
-import { fadeAnimation } from './animations.config';
 import { FooterComponent } from "./shared/footer/footer.component";
 import { HeaderComponent } from "./shared/header/header.component";
 
@@ -9,7 +8,6 @@ import { HeaderComponent } from "./shared/header/header.component";
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  animations: [fadeAnimation],
   imports: [HeaderComponent, FooterComponent, RouterOutlet]
 })
 export class AppComponent implements OnInit {
