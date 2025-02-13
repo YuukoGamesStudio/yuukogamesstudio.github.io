@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { Meta } from '@angular/platform-browser';
 import { RouterOutlet } from '@angular/router';
-import { FooterComponent } from "./shared/footer/footer.component";
-import { HeaderComponent } from "./shared/header/header.component";
+import { FooterComponent } from './shared/footer/footer.component';
+import { HeaderComponent } from './shared/header/header.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  imports: [HeaderComponent, FooterComponent, RouterOutlet]
+  imports: [HeaderComponent, FooterComponent, RouterOutlet],
 })
 export class AppComponent implements OnInit {
   constructor(private meta: Meta) {}
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
       { property: 'og:url', content: 'https://yuukogamesstudio.github.io/' },
       {
         property: 'og:image',
-        content: 'https://yuukogamesstudio.github.io/assets/img/logo.png',
+        content: 'https://yuukogamesstudio.github.io/assets/img/logo.webp',
       },
       {
         property: 'og:description',

@@ -1,9 +1,6 @@
-import {
-  Component,
-  OnInit,
-  input
-} from '@angular/core';
+import { Component, OnInit, input } from '@angular/core';
 import { Screenshot } from '@pages/games/games.model';
+import { UnpicImageDirective } from '@unpic/angular';
 import {
   Gallery,
   GalleryItem,
@@ -17,7 +14,7 @@ import { Lightbox, LightboxModule } from 'ng-gallery/lightbox';
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
   styleUrls: ['./gallery.component.scss'],
-  imports: [LightboxModule],
+  imports: [LightboxModule, UnpicImageDirective],
 })
 export class GalleryComponent implements OnInit {
   readonly images = input<Screenshot[]>([]);
@@ -26,7 +23,9 @@ export class GalleryComponent implements OnInit {
   constructor(public gallery: Gallery, public lightbox: Lightbox) {}
 
   ngOnInit(): void {
-    this.items = this.images().map(item => new ImageItem({ src: item.url, thumb: item.url }));
+    this.items = this.images().map(
+      (item) => new ImageItem({ src: item.url, thumb: item.url })
+    );
 
     // Get a lightbox gallery ref
     const lightboxRef = this.gallery.ref('lightbox');

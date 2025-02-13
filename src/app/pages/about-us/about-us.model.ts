@@ -8,21 +8,21 @@ export const MEMBERS: Member[] = [
   {
     name: 'Aleix Ferré',
     job: 'Game Designer & Programmer',
-    profilePicture: 'assets/img/profiles/aleix.png',
+    profilePicture: 'assets/img/profiles/aleix.webp',
   },
   {
     name: 'Joaquín Villena',
     job: '2D & 3D Artist',
-    profilePicture: 'assets/img/profiles/joaquin.png',
+    profilePicture: 'assets/img/profiles/joaquin.webp',
   },
   {
     name: 'Aiko',
     job: 'She is so cute',
-    profilePicture: 'assets/img/profiles/aiko.png',
+    profilePicture: 'assets/img/profiles/aiko.webp',
   },
   {
     name: 'Yuumi',
     job: 'She likes fish',
-    profilePicture: 'assets/img/profiles/yuumi.png',
+    profilePicture: 'assets/img/profiles/yuumi.webp',
   },
 ];

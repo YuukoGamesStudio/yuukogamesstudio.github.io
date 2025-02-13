@@ -3,12 +3,13 @@ import { Component } from '@angular/core';
 import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { GAMES, Game } from '@pages/games/games.model';
+import { UnpicImageDirective } from '@unpic/angular';
 
 @Component({
   selector: 'app-presskit',
   templateUrl: './presskit.component.html',
   styleUrls: ['./presskit.component.scss'],
-  imports: [DatePipe]
+  imports: [DatePipe, UnpicImageDirective],
 })
 export class PresskitComponent {
   game: Game = GAMES[0];

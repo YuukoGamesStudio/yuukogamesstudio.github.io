@@ -1,6 +1,7 @@
 <div class="page-container">
   <h1>PRESSKIT</h1>
   <img
+    unpic
     [src]="game.images.logo"
     class="full-width"
     alt="Whispers of Insanity logo"
@@ -40,12 +41,13 @@
   <div class="separator"></div>
   <h2>Screenshots</h2>
   @for (img of game.images.screenshots; track $index) {
-    <img [src]="img.url" class="screenshot" [alt]="img.alt" />
+    <img unpic [src]="img.url" class="screenshot" [alt]="img.alt" />
   }
 
   <div class="separator"></div>
   <h2>Logos & Art</h2>
   <img
+    unpic
     [src]="game.images.logoTransparent"
     class="screenshot"
     alt="Game logo image transparent"
@@ -57,7 +59,7 @@
   <div class="links-section">
     @for (link of game.otherLinks; track $index) {
       <a [href]="link.url" class="external-link" attr.aria-label="Visit Yuuko Games {{ link.text }} website">
-        <img [src]="link.imageUrl" [alt]="link.text + ' icon'" class="icon" />
+        <img unpic [src]="link.imageUrl" [alt]="link.text + ' icon'" class="icon" />
         <span>{{ link.text }}</span>
       </a>
     }

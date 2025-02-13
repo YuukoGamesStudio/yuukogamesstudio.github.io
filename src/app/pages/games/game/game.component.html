@@ -3,6 +3,7 @@
     <div>
       <div class="header margin">
         <img
+          unpic
           [src]="game.images.logoTransparent"
           class="logo"
           alt="Transparent game logo"
@@ -27,7 +28,7 @@
           </a>
         </div>
       </div>
-      <div class="description margin" [innerHTML]="game.description"></div>
+      <p class="description margin" [innerHTML]="game.description"></p>
       <br>
       <p class="description"><b>Genre:</b> {{ game.extraInfo.genre }}</p>
       <p class="description">

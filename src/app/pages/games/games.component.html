@@ -4,6 +4,7 @@
     <div (mouseenter)="toggleHover(game.id)" (mouseleave)="toggleHover(null)">
       <a [href]="'games/' + game.id" class="game" aria-label="Games">
         <img
+          unpic
           [style.display]="currentHover !== game.id ? 'block' : 'none'"
           [src]="game.images.logo"
           class="game-logo"

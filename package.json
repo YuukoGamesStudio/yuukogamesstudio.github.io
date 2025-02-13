@@ -19,6 +19,7 @@
     "@angular/platform-browser": "^19.0.1",
     "@angular/platform-browser-dynamic": "^19.0.1",
     "@angular/router": "^19.0.1",
+    "@unpic/angular": "^1.0.0",
     "ng-gallery": "^10.0.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",

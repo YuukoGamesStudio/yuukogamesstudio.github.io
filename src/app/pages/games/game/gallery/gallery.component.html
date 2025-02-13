@@ -1,5 +1,5 @@
 <div class="gallery" gallerize>
   @for (img of images(); track $index) {
-    <img [src]="img.url" class="screenshot" [alt]="img.alt" />
+    <img unpic [src]="img.url" class="screenshot" [alt]="img.alt" />
   }
 </div>
