@@ -1,0 +1,45 @@
+.separated {
+  margin: 5rem 0;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.asset-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+  text-decoration: none;
+  align-items: center;
+  color: white;
+  transition: filter 0.2s ease-in-out;
+
+  &:hover {
+    filter: brightness(1.2);
+  }
+
+  img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 4px;
+  }
+
+  .asset-info {
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+
+    .author {
+      font-size: 0.8rem;
+      color: rgb(151, 151, 151);
+    }
+  }
+}

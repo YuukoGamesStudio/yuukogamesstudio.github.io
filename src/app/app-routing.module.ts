@@ -1,5 +1,6 @@
 import { Routes } from '@angular/router';
 import { AboutUsComponent } from '@pages/about-us/about-us.component';
+import { AssetsComponent } from '@pages/assets/assets.component';
 import { ContactComponent } from '@pages/contact/contact.component';
 import { GameComponent } from '@pages/games/game/game.component';
 import { GameGuard } from '@pages/games/game/game.guard';
@@ -37,6 +38,11 @@ export const routes: Routes = [
     canActivate: [GameGuard],
   },
   {
+    path: 'assets',
+    component: AssetsComponent,
+    title: 'Assets - Yuuko Games',
+  },
+  {
     path: 'contact',
     component: ContactComponent,
     title: 'Presskit - Yuuko Games',
@@ -47,4 +53,3 @@ export const routes: Routes = [
     title: 'Page not found - Yuuko Games',
   },
 ];
-
