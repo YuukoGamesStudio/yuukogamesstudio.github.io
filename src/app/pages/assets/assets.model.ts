@@ -6,4 +6,11 @@ export const ASSETS = [
     author: 'Joaquín Villena',
     url: 'https://atalaya22.itch.io/starter-pack',
   },
+  {
+    name: 'USignals',
+    description: 'A reactivity package for Unity.',
+    image: 'assets/img/assets/usignals/logo.webp',
+    author: 'Aleix Ferré',
+    url: 'https://github.com/Yuuko-Games/USignals',
+  },
 ];

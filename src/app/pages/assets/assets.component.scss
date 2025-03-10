@@ -11,9 +11,9 @@
 .asset-container {
   display: flex;
   flex-direction: column;
+  width: min-content;
   margin-bottom: 2rem;
   text-decoration: none;
-  align-items: center;
   color: white;
   transition: filter 0.2s ease-in-out;
 
