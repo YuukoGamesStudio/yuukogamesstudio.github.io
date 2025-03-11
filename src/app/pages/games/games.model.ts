@@ -100,24 +100,12 @@ export const GAMES: Game[] = [
           url: 'assets/img/games/the-forbidden-door/screenshots/llibre.webp',
           alt: 'A dim room with some books stacked on top of each other',
         },
-        {
-          url: 'assets/img/games/the-forbidden-door/screenshots/car.webp',
-          alt: 'A police truck parked on the side of a road at night',
-        },
-        {
-          url: 'assets/img/games/the-forbidden-door/screenshots/house.webp',
-          alt: 'A spooky house with lights open with two statues guarding the entrance',
-        },
-        {
-          url: 'assets/img/games/the-forbidden-door/screenshots/grave.webp',
-          alt: 'A graveyard outside the house with creepy trees',
-        },
       ],
     },
     video: {
       shortVideo: 'assets/videos/trailer.mp4',
-      trailerYoutubeURL: 'https://youtu.be/LID7j7g_H04',
-      embed: 'https://www.youtube.com/embed/LID7j7g_H04',
+      trailerYoutubeURL: 'https://youtu.be/Tq2OI6ME04A',
+      embed: 'https://www.youtube.com/embed/Tq2OI6ME04A',
     },
     externalLink: 'https://yuukogames.itch.io/the-forbidden-door',
     otherLinks: [
