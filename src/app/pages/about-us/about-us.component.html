@@ -8,4 +8,12 @@
     </div>
     }
   </div>
+  <div class="grid">
+    @for (member of pets; track $index) {
+    <div class="member" [style.background-image]="'url(' + member.profilePicture + ')'">
+      <p class="name">{{ member.name }}</p>
+      <p class="job">{{ member.job }}</p>
+    </div>
+    }
+  </div>
 </div>

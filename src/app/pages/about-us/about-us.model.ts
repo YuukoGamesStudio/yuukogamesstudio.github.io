@@ -16,6 +16,14 @@ export const MEMBERS: Member[] = [
     profilePicture: 'assets/img/profiles/joaquin.webp',
   },
   {
+    name: 'Arnau Albertí',
+    job: 'Game Designer & Programmer',
+    profilePicture: 'assets/img/profiles/arnau.webp',
+  },
+];
+
+export const PETS: Member[] = [
+  {
     name: 'Aiko',
     job: 'She is so cute',
     profilePicture: 'assets/img/profiles/aiko.webp',

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MEMBERS } from './about-us.model';
+import { MEMBERS, PETS } from './about-us.model';
 
 @Component({
   selector: 'app-about-us',
@@ -8,4 +8,5 @@ import { MEMBERS } from './about-us.model';
 })
 export class AboutUsComponent {
   members = MEMBERS;
+  pets = PETS;
 }
