@@ -1,13 +1,24 @@
-<video class="video-player" loop [muted]="'muted'" autoplay>
-  <source src="assets/videos/trailer.mp4" type="video/mp4" />
-  Your browser does not support the video tag.
-</video>
-<div class="over-all">
-  <h1 class="title">
-    <span>We build </span>
-    <app-animated-text [texts]="homeDynamicTexts" [showCursor]="true" class="dynamic-text">
-    </app-animated-text>
-  </h1>
-  <h3 class="subtitle">We are a indie game development studio based in Girona</h3>
-  <button class="btn-1" (click)="goToLatestGame()">Check out our latest project</button>
+<div class="video-container" (mouseenter)="showVideoButton = true" (mouseleave)="showVideoButton = false">
+  <video class="video-player" loop [muted]="'muted'" autoplay #videoPlayer>
+    <source src="assets/videos/trailer.mp4" type="video/mp4" />
+    Your browser does not support the video tag.
+  </video>
+
+  <button class="video-toggle-btn" [ngClass]="{'show': showVideoButton}" (click)="toggleVideo(videoPlayer)">
+    <span class="material-icons">{{ videoPlayer.paused ? 'play_arrow' : 'pause' }}</span>
+  </button>
+
+  <div class="over-all">
+    <h1 class="title">
+      <span>We build </span>
+      @if (videoPlayer.paused) {
+      <span class="dynamic-text">videogames for you</span>
+      } @else {
+      <app-animated-text [texts]="homeDynamicTexts" [showCursor]="true" class="dynamic-text">
+      </app-animated-text>
+      }
+    </h1>
+    <h3 class="subtitle">We are a indie game development studio based in Girona</h3>
+    <button class="btn-1" (click)="goToLatestGame()">Check out our latest project</button>
+  </div>
 </div>
