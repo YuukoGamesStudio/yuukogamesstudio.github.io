@@ -3,7 +3,7 @@ import {
   ActivatedRouteSnapshot,
   CanActivate,
   Router,
-  UrlTree
+  UrlTree,
 } from '@angular/router';
 import { Observable } from 'rxjs';
 import { GAMES } from '../games.model';
@@ -35,7 +35,7 @@ export class GameGuard implements CanActivate {
       }
     }
 
-    // Return true if the ID exists, otherwise navigate to a different route
-    return exists || this.router.navigate(['/not-found']);
+    // Return true if the ID exists, otherwise navigate to see all games
+    return exists || this.router.navigate(['/games']);
   }
 }

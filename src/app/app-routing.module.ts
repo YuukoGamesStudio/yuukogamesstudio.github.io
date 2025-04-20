@@ -18,7 +18,7 @@ export const routes: Routes = [
   {
     path: 'about-us',
     component: AboutUsComponent,
-    title: 'About us - Yuuko Games',
+    title: 'Our Team - Yuuko Games',
   },
   {
     path: 'games',
@@ -34,7 +34,7 @@ export const routes: Routes = [
   {
     path: 'games/:id/presskit',
     component: PresskitComponent,
-    title: 'Game - Yuuko Games',
+    title: 'Presskit - Yuuko Games',
     canActivate: [GameGuard],
   },
   {
@@ -45,7 +45,7 @@ export const routes: Routes = [
   {
     path: 'contact',
     component: ContactComponent,
-    title: 'Presskit - Yuuko Games',
+    title: 'Contact - Yuuko Games',
   },
   {
     path: '**',
