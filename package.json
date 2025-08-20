@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "deploy": "ng deploy --base-href=https://yuukogamesstudio.github.io/ --dir=dist/yuukogames-webpage/browser"
+    "deploy": "ng deploy --base-href=http://yuukogames.com/ --dir=dist/yuukogames-webpage/browser"
   },
   "private": true,
   "dependencies": {
