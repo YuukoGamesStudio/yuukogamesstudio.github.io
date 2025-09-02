@@ -46,7 +46,7 @@ export class GameComponent implements OnInit {
 
       this.metaService.updateTag({
         property: 'og:url',
-        content: `https://yuukogamesstudio.github.io/games/${this.game.id}/`,
+        content: `https://www.yuukogames.com/games/${this.game.id}/`,
       });
 
       this.titleService.setTitle(`${this.game.name} - Yuuko Games`);

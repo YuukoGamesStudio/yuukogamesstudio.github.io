@@ -167,16 +167,16 @@ export const GAMES: Game[] = [
       shortVideo: 'assets/videos/the-forbidden-door-trailer.mp4',
       embed: 'https://www.youtube.com/embed/Tq2OI6ME04A',
     },
-    externalLink: 'https://www.yuukogames.com/the-forbidden-door',
+    externalLink: 'https://yuukogames.itch.io/the-forbidden-door',
     otherLinks: [
       {
         text: 'Itch.io',
-        url: 'https://www.yuukogames.com/the-forbidden-door',
+        url: 'https://yuukogames.itch.io/the-forbidden-door',
         imageUrl: 'assets/img/socials/itch-io.svg',
       },
       {
         text: 'Website',
-        url: 'https://yuukogamesstudio.github.io/games/the-forbidden-door',
+        url: 'https://www.yuukogames.com/games/the-forbidden-door',
         imageUrl: 'assets/img/socials/website.svg',
       },
     ],

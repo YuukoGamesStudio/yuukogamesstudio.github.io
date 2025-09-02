@@ -20,10 +20,10 @@ export class AppComponent implements OnInit {
         content: 'Yuuko Games Studio - Homemade videogames',
       },
       { property: 'og:type', content: 'website' },
-      { property: 'og:url', content: 'https://yuukogamesstudio.github.io/' },
+      { property: 'og:url', content: 'https://www.yuukogames.com/' },
       {
         property: 'og:image',
-        content: 'https://yuukogamesstudio.github.io/assets/img/logo.webp',
+        content: 'https://www.yuukogames.com/assets/img/logo.webp',
       },
       {
         property: 'og:description',

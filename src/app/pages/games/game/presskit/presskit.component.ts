@@ -48,7 +48,7 @@ export class PresskitComponent {
 
       this.metaService.updateTag({
         property: 'og:url',
-        content: `https://yuukogamesstudio.github.io/games/${this.game.id}/presskit/`,
+        content: `https://www.yuukogames.com/games/${this.game.id}/presskit/`,
       });
 
       this.titleService.setTitle(`${this.game.name} Presskit - Yuuko Games`);
