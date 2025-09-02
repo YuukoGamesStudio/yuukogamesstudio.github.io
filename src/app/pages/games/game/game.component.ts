@@ -1,3 +1,4 @@
+import { NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -9,7 +10,7 @@ import { GalleryComponent } from './gallery/gallery.component';
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
-  imports: [GalleryComponent, UnpicImageDirective],
+  imports: [GalleryComponent, UnpicImageDirective, NgStyle],
 })
 export class GameComponent implements OnInit {
   game!: Game;
@@ -51,7 +52,7 @@ export class GameComponent implements OnInit {
       this.titleService.setTitle(`${this.game.name} - Yuuko Games`);
 
       this.embedSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-        this.game.video.embed
+        this.game.video.embed ?? ''
       );
     });
   }

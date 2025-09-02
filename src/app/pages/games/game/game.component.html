@@ -1,29 +1,16 @@
-<div class="page-container">
+<div class="page-container" [ngStyle]="{'background-image': 'url(' + game.images.background + ')'}">
   <div class="head">
-    <div>
+    <div class="header-container">
       <div class="header margin">
-        <img
-          unpic
-          [src]="game.images.logoTransparent"
-          class="logo"
-          alt="Transparent game logo"
-        />
+        <img unpic [src]="game.images.logoTransparent" class="logo" alt="Transparent game logo" />
         <div class="separator"></div>
         <div class="links">
-          <a
-            [href]="game.externalLink"
-            target="_blank"
-            class="button"
-            attr.aria-label="Visit {{ game.name }} website"
-          >
+          <a [href]="game.externalLink" target="_blank" class="button" attr.aria-label="Visit {{ game.name }} website">
             PLAY NOW
             <span class="material-icons icon-padding"> open_in_new </span>
           </a>
-          <a
-            [href]="'games/' + game.id + '/presskit'"
-            class="button secondary"
-            attr.aria-label="Visit {{ game.name }} presskit"
-          >
+          <a [href]="'games/' + game.id + '/presskit'" class="button secondary"
+            attr.aria-label="Visit {{ game.name }} presskit">
             PRESSKIT
           </a>
         </div>
@@ -38,21 +25,24 @@
         <b>Controls:</b> {{ game.extraInfo.controls.join(", ") }}
       </p>
       @if (game.extraInfo.pegi) {
-        <p class="description"><b>PEGI:</b> {{ game.extraInfo.pegi }}</p>
+      <p class="description"><b>Minimum recommended age:</b> {{ game.extraInfo.pegi }}</p>
       }
     </div>
   </div>
 
-  <h2 class="subtitle">Screenshots</h2>
+  <h2 class="subtitle">Images</h2>
   <app-gallery [images]="game.images.screenshots"></app-gallery>
 
+  @if (game.images.screenshotsSubtitle) {
+  <p class="info">{{ game.images.screenshotsSubtitle }}</p>
+  }
+
+  @if (this.game.video.embed) {
   <h2 class="subtitle">Teaser Trailer</h2>
-  <iframe
-    width="100%"
-    class="video"
-    [src]="embedSafeUrl"
-    frameborder="0"
+  <iframe width="100%" class="video" [src]="embedSafeUrl" frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
+    allowfullscreen></iframe>
+  } @else {
+  <div class="margin more"></div>
+  }
 </div>

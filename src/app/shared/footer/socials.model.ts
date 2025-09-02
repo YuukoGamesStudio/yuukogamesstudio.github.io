@@ -18,7 +18,7 @@ export const SOCIALS: Social[] = [
   {
     text: 'Itch.io',
     imageUrl: 'assets/img/socials/itch-io.svg',
-    url: 'https://yuukogames.itch.io',
+    url: 'https://www.yuukogames.com',
   },
   {
     text: 'Instagram',

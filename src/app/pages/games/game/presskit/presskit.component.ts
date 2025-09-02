@@ -28,7 +28,7 @@ export class PresskitComponent {
       this.game = GAMES.find((game) => game.id === id) ?? GAMES[0];
 
       this.embedSafeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(
-        this.game.video.embed
+        this.game.video.embed ?? ''
       );
 
       this.metaService.updateTag({
