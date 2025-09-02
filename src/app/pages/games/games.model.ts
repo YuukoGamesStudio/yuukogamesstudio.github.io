@@ -112,7 +112,7 @@ export const GAMES: Game[] = [
     otherLinks: [
       {
         text: 'Itch.io',
-        url: 'https://www.yuukogames.com/24h-antes-del-apocalipsis',
+        url: 'https://yuukogames.itch.io/24h-antes-del-apocalipsis',
         imageUrl: 'assets/img/socials/itch-io.svg',
       },
       {
