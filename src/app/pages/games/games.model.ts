@@ -13,6 +13,7 @@ export enum Platform {
 
 export enum Control {
   KeyboardAndMouse = 'Keyboard and Mouse',
+  Mouse = 'Mouse',
   ControllerAny = 'Any Controller',
   PSController = 'PlayStation Controller',
   SwitchController = 'Nintendo Switch Controller',
@@ -22,6 +23,7 @@ export enum Control {
   DualSense = 'DualSense Controller',
   JoyCon = 'Joy-Con',
   ProController = 'Nintendo Switch Pro Controller',
+  Mobile = 'Mobile',
 }
 
 export interface Screenshot {
@@ -49,11 +51,12 @@ export interface Game {
     logo: string;
     logoTransparent: string;
     screenshots: Screenshot[];
+    screenshotsSubtitle?: string;
+    background: string;
   };
   video: {
-    trailerYoutubeURL: string;
     shortVideo: string;
-    embed: string;
+    embed?: string;
   };
   externalLink: string;
   otherLinks: {
@@ -64,6 +67,61 @@ export interface Game {
 }
 
 export const GAMES: Game[] = [
+  {
+    id: '24h-antes-del-apocalipsis',
+    name: '24h Antes del Apocalipsis',
+    description:
+      'A short story where choices matter written in Spanish.<br><br>Una madre muerta, un secreto familiar y un reloj que nunca se detiene. Elige tu camino y descubre cuál de los <strong>4 finales</strong> marcará el destino de Daniel y Adrián.<br>Tienes solo <strong>un día</strong> para cambiarlo todo.',
+    redirectLinks: [],
+    extraInfo: {
+      title: '24h Antes del Apocalipsis',
+      genre: 'Choices Matter & Text Adventure',
+      developer: 'Yuuko Games Studio',
+      publisher: 'Yuuko Games Studio',
+      production: 'Yuuko Games Studio',
+      releaseDate: new Date('2025-09-10'),
+      pegi: '16',
+      platforms: [Platform.ItchIo],
+      controls: [Control.Mouse, Control.Mobile],
+    },
+    images: {
+      logo: 'assets/img/games/24h-antes-del-apocalipsis/miniatura.webp',
+      logoTransparent: 'assets/img/games/24h-antes-del-apocalipsis/logo.webp',
+      background: 'assets/img/games/24h-antes-del-apocalipsis/background.webp',
+      screenshotsSubtitle:
+        '*Images generated with artificial intelligence just to illustrate the novel.',
+      screenshots: [
+        {
+          url: 'assets/img/games/24h-antes-del-apocalipsis/screenshots/daniel.webp',
+          alt: '',
+        },
+        {
+          url: 'assets/img/games/24h-antes-del-apocalipsis/screenshots/escena.webp',
+          alt: '',
+        },
+        {
+          url: 'assets/img/games/24h-antes-del-apocalipsis/screenshots/madre.webp',
+          alt: 'Sara, la nadre',
+        },
+      ],
+    },
+    video: {
+      shortVideo: 'assets/videos/24h-trailer.mp4',
+    },
+    externalLink: 'https://yuukogames.itch.io/24h-antes-del-apocalipsis',
+    otherLinks: [
+      {
+        text: 'Itch.io',
+        url: 'https://www.yuukogames.com/24h-antes-del-apocalipsis',
+        imageUrl: 'assets/img/socials/itch-io.svg',
+      },
+      {
+        text: 'Website',
+        url: 'https://www.yuukogames.com/games/24h-antes-del-apocalipsis',
+        imageUrl: 'assets/img/socials/website.svg',
+      },
+    ],
+  },
   {
     id: 'the-forbidden-door',
     name: 'The Forbidden Door',
@@ -81,12 +139,15 @@ export const GAMES: Game[] = [
       developer: 'Yuuko Games Studio',
       publisher: 'Yuuko Games Studio',
       production: 'Yuuko Games Studio',
+      pegi: '13',
+      releaseDate: new Date('2025-05-10'),
       platforms: [Platform.ItchIo],
       controls: [Control.KeyboardAndMouse],
     },
     images: {
       logo: 'assets/img/games/the-forbidden-door/miniatura.webp',
       logoTransparent: 'assets/img/games/the-forbidden-door/logo.webp',
+      background: 'assets/img/games/the-forbidden-door/background.webp',
       screenshots: [
         {
           url: 'assets/img/games/the-forbidden-door/screenshots/estatua.webp',
@@ -103,15 +164,14 @@ export const GAMES: Game[] = [
       ],
     },
     video: {
-      shortVideo: 'assets/videos/trailer.mp4',
-      trailerYoutubeURL: 'https://youtu.be/Tq2OI6ME04A',
+      shortVideo: 'assets/videos/the-forbidden-door-trailer.mp4',
       embed: 'https://www.youtube.com/embed/Tq2OI6ME04A',
     },
-    externalLink: 'https://yuukogames.itch.io/the-forbidden-door',
+    externalLink: 'https://www.yuukogames.com/the-forbidden-door',
     otherLinks: [
       {
         text: 'Itch.io',
-        url: 'https://yuukogames.itch.io/the-forbidden-door',
+        url: 'https://www.yuukogames.com/the-forbidden-door',
         imageUrl: 'assets/img/socials/itch-io.svg',
       },
       {

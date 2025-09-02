@@ -1,11 +1,6 @@
 <div class="page-container">
   <h1>PRESSKIT</h1>
-  <img
-    unpic
-    [src]="game.images.logo"
-    class="full-width"
-    alt="Whispers of Insanity logo"
-  />
+  <img unpic [src]="game.images.logo" class="full-width" alt="Whispers of Insanity logo" />
 
   <div class="columns">
     <div>
@@ -27,41 +22,33 @@
     </div>
   </div>
 
+  @if (this.game.video.embed) {
   <div class="separator"></div>
   <h2>Videos</h2>
-  <iframe
-    width="100%"
-    class="video"
-    [src]="embedSafeUrl"
-    frameborder="0"
+  <iframe width="100%" class="video" [src]="embedSafeUrl" frameborder="0"
     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-    allowfullscreen
-  ></iframe>
+    allowfullscreen></iframe>
+  }
 
   <div class="separator"></div>
   <h2>Screenshots</h2>
   @for (img of game.images.screenshots; track $index) {
-    <img unpic [src]="img.url" class="screenshot" [alt]="img.alt" />
+  <img unpic [src]="img.url" class="screenshot" [alt]="img.alt" />
   }
 
   <div class="separator"></div>
   <h2>Logos & Art</h2>
-  <img
-    unpic
-    [src]="game.images.logoTransparent"
-    class="screenshot"
-    alt="Game logo image transparent"
-  />
+  <img unpic [src]="game.images.logoTransparent" class="screenshot" alt="Game logo image transparent" />
   <img [src]="game.images.logo" class="screenshot" alt="Game logo image" />
 
   <div class="separator"></div>
   <h2>External Links</h2>
   <div class="links-section">
     @for (link of game.otherLinks; track $index) {
-      <a [href]="link.url" class="external-link" attr.aria-label="Visit Yuuko Games {{ link.text }} website">
-        <img unpic [src]="link.imageUrl" [alt]="link.text + ' icon'" class="icon" />
-        <span>{{ link.text }}</span>
-      </a>
+    <a [href]="link.url" class="external-link" attr.aria-label="Visit Yuuko Games {{ link.text }} website">
+      <img unpic [src]="link.imageUrl" [alt]="link.text + ' icon'" class="icon" />
+      <span>{{ link.text }}</span>
+    </a>
     }
   </div>
 

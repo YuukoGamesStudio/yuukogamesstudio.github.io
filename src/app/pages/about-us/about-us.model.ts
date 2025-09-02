@@ -15,11 +15,6 @@ export const MEMBERS: Member[] = [
     job: '2D & 3D Artist',
     profilePicture: 'assets/img/profiles/joaquin.webp',
   },
-  {
-    name: 'Arnau Albertí',
-    job: 'Game Designer & Programmer',
-    profilePicture: 'assets/img/profiles/arnau.webp',
-  },
 ];
 
 export const PETS: Member[] = [
