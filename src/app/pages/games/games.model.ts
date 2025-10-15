@@ -161,6 +161,18 @@ export const GAMES: Game[] = [
           url: 'assets/img/games/the-forbidden-door/screenshots/llibre.webp',
           alt: 'A dim room with some books stacked on top of each other',
         },
+        {
+          url: 'assets/img/games/the-forbidden-door/screenshots/maniqui.webp',
+          alt: 'A dark room with two humanoid mannequins partially lit by side light; behind them are stacked paintings, one depicting a skull',
+        },
+        {
+          url: 'assets/img/games/the-forbidden-door/screenshots/censored.webp',
+          alt: 'A dimly lit storage room or basement with boxes, wooden pallets, a box labeled “CENSORED,” and blood stains on the floor',
+        },
+        {
+          url: 'assets/img/games/the-forbidden-door/screenshots/pantalla.webp',
+          alt: 'A dim room with a window in the background, a television showing static, and a mannequin standing beside it surrounded by lit candles',
+        },
       ],
     },
     video: {
