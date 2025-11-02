@@ -27,6 +27,11 @@
       @if (game.extraInfo.pegi) {
       <p class="description"><b>Minimum recommended age:</b> {{ game.extraInfo.pegi }}</p>
       }
+
+      <div class="margin"></div>
+
+      <p class="description"><b>Release Date:</b> {{ game.extraInfo.releaseDate | date: 'MM/yyyy' }}
+        ({{ isReleased(game.extraInfo.releaseDate) ? 'Released' : 'Coming soon' }})</p>
     </div>
   </div>
 

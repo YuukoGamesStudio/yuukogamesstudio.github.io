@@ -1,4 +1,4 @@
-import { NgStyle } from '@angular/common';
+import { DatePipe, NgStyle } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer, Meta, SafeUrl, Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
@@ -10,7 +10,7 @@ import { GalleryComponent } from './gallery/gallery.component';
   selector: 'app-game',
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.scss'],
-  imports: [GalleryComponent, UnpicImageDirective, NgStyle],
+  imports: [GalleryComponent, UnpicImageDirective, NgStyle, DatePipe],
 })
 export class GameComponent implements OnInit {
   game!: Game;
@@ -60,5 +60,13 @@ export class GameComponent implements OnInit {
   openImage(index: number | null): void {
     this.currentId = index;
     console.log(this.currentId);
+  }
+
+  isReleased(releaseDate: Date | undefined): boolean {
+    if (!releaseDate) {
+      return false;
+    }
+    const now = new Date();
+    return now.getFullYear() === releaseDate.getFullYear();
   }
 }
