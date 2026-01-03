@@ -67,6 +67,6 @@ export class GameComponent implements OnInit {
       return false;
     }
     const now = new Date();
-    return now.getFullYear() === releaseDate.getFullYear();
+    return releaseDate.getTime() <= now.getTime();
   }
 }
