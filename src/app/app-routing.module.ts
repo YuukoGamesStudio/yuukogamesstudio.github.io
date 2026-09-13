@@ -3,7 +3,7 @@ import { AboutUsComponent } from '@pages/about-us/about-us.component';
 import { AssetsComponent } from '@pages/assets/assets.component';
 import { ContactComponent } from '@pages/contact/contact.component';
 import { GameComponent } from '@pages/games/game/game.component';
-import { GameGuard } from '@pages/games/game/game.guard';
+import { gameGuard } from '@pages/games/game/game.guard';
 import { PresskitComponent } from '@pages/games/game/presskit/presskit.component';
 import { GamesComponent } from '@pages/games/games.component';
 import { HomeComponent } from '@pages/home/home.component';
@@ -29,13 +29,13 @@ export const routes: Routes = [
     path: 'games/:id',
     component: GameComponent,
     title: 'Game - Yuuko Games',
-    canActivate: [GameGuard],
+    canActivate: [gameGuard],
   },
   {
     path: 'games/:id/presskit',
     component: PresskitComponent,
     title: 'Presskit - Yuuko Games',
-    canActivate: [GameGuard],
+    canActivate: [gameGuard],
   },
   {
     path: 'assets',
