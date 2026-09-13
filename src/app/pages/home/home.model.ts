@@ -1,5 +1,7 @@
 export const HOME_DYNAMIC_TEXTS: string[] = [
   'immersive worlds',
-  'interactive experiences',
-  'innovative mechanics',
+  'stories worth telling',
+  'experiences, not products',
+  'an atmosphere you can feel',
+  'games worth your time',
 ];

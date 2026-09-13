@@ -1,7 +1,7 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { GAMES } from '@pages/games/games.model';
+import { FEATURED_GAME } from '@pages/games/games.model';
 import { AnimatedTextComponent } from '../../shared/animated-text/animated-text.component';
 import { HOME_DYNAMIC_TEXTS } from './home.model';
 
@@ -20,8 +20,8 @@ export class HomeComponent {
 
   constructor(private router: Router) {}
 
-  goToLatestGame() {
-    const latestGame = GAMES[0];
+  goToFeaturedGame() {
+    const latestGame = FEATURED_GAME;
     this.router.navigate(['games', latestGame.id]);
   }
 

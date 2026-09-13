@@ -1,45 +1,57 @@
-import { Component, OnInit, input } from '@angular/core';
+import { Component, OnDestroy, OnInit, input, signal } from '@angular/core';
+
+const TYPE_DELAY = 100;
+const ERASE_DELAY = 50;
+const HOLD_AFTER_WORD = 1000;
+const PAUSE_BEFORE_NEXT_WORD = 500;
 
 @Component({
   selector: 'app-animated-text',
   templateUrl: './animated-text.component.html',
   styleUrls: ['./animated-text.component.scss'],
 })
-export class AnimatedTextComponent implements OnInit {
+export class AnimatedTextComponent implements OnInit, OnDestroy {
   readonly texts = input<string[]>(['']);
   readonly showCursor = input<boolean>(false);
 
-  currentWordIndex: number = 0;
-  dynamicText: string = '';
-  currentInterval!: NodeJS.Timeout;
+  readonly dynamicText = signal<string>('');
+
+  private currentWordIndex: number = 0;
+  private nextStep?: ReturnType<typeof setTimeout>;
 
   ngOnInit(): void {
-    this.dynamicText = '';
-    this.currentInterval = setInterval(this.writeNextCharacter, 100, this);
+    this.dynamicText.set('');
+    this.nextStep = setTimeout(() => this.writeNextCharacter(), TYPE_DELAY);
   }
 
-  private writeNextCharacter(that: this) {
-    that.dynamicText += that.texts()[that.currentWordIndex].charAt(
-      that.dynamicText.length
+  ngOnDestroy(): void {
+    clearTimeout(this.nextStep);
+  }
+
+  private writeNextCharacter(): void {
+    const word = this.texts()[this.currentWordIndex];
+    const text = this.dynamicText() + word.charAt(this.dynamicText().length);
+    this.dynamicText.set(text);
+
+    this.nextStep =
+      text.length >= word.length
+        ? setTimeout(() => this.eraseLastCharacter(), HOLD_AFTER_WORD)
+        : setTimeout(() => this.writeNextCharacter(), TYPE_DELAY);
+  }
+
+  private eraseLastCharacter(): void {
+    const text = this.dynamicText().slice(0, -1);
+    this.dynamicText.set(text);
+
+    if (text.length > 0) {
+      this.nextStep = setTimeout(() => this.eraseLastCharacter(), ERASE_DELAY);
+      return;
+    }
+
+    this.currentWordIndex = (this.currentWordIndex + 1) % this.texts().length;
+    this.nextStep = setTimeout(
+      () => this.writeNextCharacter(),
+      PAUSE_BEFORE_NEXT_WORD
     );
-
-    if (that.dynamicText.length >= that.texts()[that.currentWordIndex].length) {
-      clearInterval(that.currentInterval);
-      setTimeout(() => {
-        that.currentInterval = setInterval(that.eraseLastCharacter, 50, that);
-      }, 1000);
-    }
-  }
-
-  private eraseLastCharacter(that: this) {
-    that.dynamicText = that.dynamicText.slice(0, -1);
-
-    if (that.dynamicText.length <= 0) {
-      clearInterval(that.currentInterval);
-      that.currentWordIndex = (that.currentWordIndex + 1) % that.texts().length;
-      setTimeout(() => {
-        that.currentInterval = setInterval(that.writeNextCharacter, 100, that);
-      }, 500);
-    }
   }
 }
