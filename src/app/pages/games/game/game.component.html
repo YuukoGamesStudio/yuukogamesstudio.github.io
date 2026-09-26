@@ -30,7 +30,7 @@
 
       <div class="margin"></div>
 
-      <p class="description"><b>Release Date:</b> {{ game.extraInfo.releaseDate | date: 'MM/yyyy' }}
+      <p class="description"><b>Release Date:</b> {{ (game.extraInfo.releaseDate | date: 'MM/yyyy') ?? 'TBA' }}
         ({{ isReleased(game.extraInfo.releaseDate) ? 'Released' : 'Coming soon' }})</p>
     </div>
   </div>

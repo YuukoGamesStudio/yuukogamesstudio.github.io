@@ -5,20 +5,22 @@
       <a [href]="'games/' + game.id" class="game" aria-label="Games">
         <img
           unpic
-          [style.display]="currentHover !== game.id ? 'block' : 'none'"
+          [style.display]="currentHover !== game.id || !game.video.shortVideo ? 'block' : 'none'"
           [src]="game.images.logo"
           class="game-logo"
           alt="Game logo image"
         />
-        <video
-          [style.display]="currentHover === game.id ? 'block' : 'none'"
-          [src]="game.video.shortVideo"
-          class="game-logo"
-          alt="Game logo video"
-          [muted]="'muted'"
-          loop
-          autoplay
-        ></video>
+        @if (game.video.shortVideo) {
+          <video
+            [style.display]="currentHover === game.id ? 'block' : 'none'"
+            [src]="game.video.shortVideo"
+            class="game-logo"
+            alt="Game logo video"
+            [muted]="'muted'"
+            loop
+            autoplay
+          ></video>
+        }
         @if (currentHover === game.id) {
           <div class="overlay">
             <span class="game-text">{{ game.name }}</span>

@@ -9,6 +9,8 @@ export enum Platform {
   NintendoSwitch = 'Nintendo Switch',
   iOS = 'iOS',
   Android = 'Android',
+  Windows = 'Windows',
+  Browser = 'Web Browser',
 }
 
 export enum Control {
@@ -55,7 +57,7 @@ export interface Game {
     background: string;
   };
   video: {
-    shortVideo: string;
+    shortVideo?: string;
     embed?: string;
   };
   externalLink: string;
@@ -67,6 +69,66 @@ export interface Game {
 }
 
 export const GAMES: Game[] = [
+  {
+    id: 'threefold',
+    name: 'Threefold',
+    description:
+      '<b>Match three, peel back the layers, beat the clock.</b><br><br>' +
+      '<b>Threefold</b> is a sorting puzzle about tidy shelves and messy piles. Drag the little pixel-art characters between floating islands. When a shelf holds three of the same kind, they pop, and the layer stacked behind them slides forward. Clear every layer before time runs out.<br><br>' +
+      "It's easy to pick up. Then the islands start locking, the shelves start moving, and apples start rotting.<br><br>" +
+      '<b>5,000 stages</b>, each one built from its number, so every player gets the same board. New mechanics keep arriving all the way to stage 190: crates, coins, rotting apples, wrapped parcels, bonded pairs, carousel rows, locks, fragile shelves, move budgets and more.<br><br>' +
+      'Spend your coins on <b>Jokers</b> like Frozen, Clone, Hint, Lightning and Extra Life, and level up to earn chests with outfits and tools. Dress your hero with <b>181 garments</b> in the Dressing Room and find one of <b>12 tools</b> that give passive bonuses.<br><br>' +
+      'Available in English, Spanish and Catalan. Plays offline. No ads, no in-app purchases, no account.',
+    redirectLinks: [],
+    extraInfo: {
+      title: 'Threefold',
+      genre: 'Match-3 Sorting Puzzle',
+      developer: 'Yuuko Games Studio',
+      publisher: 'Yuuko Games Studio',
+      production: 'Yuuko Games Studio',
+      releaseDate: new Date('2026-09-27'),
+      platforms: [
+        Platform.ItchIo,
+        Platform.Android,
+        Platform.Windows,
+        Platform.Browser,
+      ],
+      controls: [Control.Mobile, Control.Mouse],
+    },
+    images: {
+      logo: 'assets/img/games/threefold/portada.webp',
+      logoTransparent: 'assets/img/games/threefold/logo.webp',
+      background: 'assets/img/games/threefold/background.webp',
+      screenshots: [
+        {
+          url: 'assets/img/games/threefold/screenshots/mainmenu.webp',
+          alt: 'Main menu with a pixel-art hero standing next to a campfire in a forest, with a Play button and the Jokers bar below',
+        },
+        {
+          url: 'assets/img/games/threefold/screenshots/ingame.webp',
+          alt: 'A stage in progress: a grid of shelves filled with pixel-art characters over a starry purple sky, a countdown timer on top and locked islands',
+        },
+        {
+          url: 'assets/img/games/threefold/screenshots/outfit.webp',
+          alt: 'The Dressing Room, where the hero can be customised with skins, hair, shirts, pants and other garments',
+        },
+      ],
+    },
+    video: {},
+    externalLink: 'https://yuukogames.itch.io/threefold',
+    otherLinks: [
+      {
+        text: 'Itch.io',
+        url: 'https://yuukogames.itch.io/threefold',
+        imageUrl: 'assets/img/socials/itch-io.svg',
+      },
+      {
+        text: 'Website',
+        url: 'https://www.yuukogames.com/games/threefold',
+        imageUrl: 'assets/img/socials/website.svg',
+      },
+    ],
+  },
   {
     id: '24h-antes-del-apocalipsis',
     name: '24h Antes del Apocalipsis',
@@ -195,4 +257,4 @@ export const GAMES: Game[] = [
   },
 ];
 
-export const FEATURED_GAME = GAMES[1];
+export const FEATURED_GAME = GAMES[0];
